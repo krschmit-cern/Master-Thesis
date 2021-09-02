@@ -1,20 +1,60 @@
-\documentclass[twoside, openright]{report}
+\documentclass[a4paper, 12pt, twoside, openright]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[margin=1in,bindingoffset=.3in]{geometry}
 \usepackage{subcaption}
 
 \usepackage{subfiles}
+\usepackage{fancyhdr}
+
+\usepackage{lineno}
+\linenumbers
+
+\setlength{\parindent}{0pt}
 
 \title{Thesis}
 \author{Kristina Schmitt}
 
 \begin{document}
+\pagestyle{headings}
 
+\pagenumbering{gobble} 
 \subfile{cover.tex}
 
-\tableofcontents
+\subfile{eidesstattliche_erklaerung.tex}
 
-\subfile{outline.tex}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\chapter{Introduction}
+\subfile{intro.tex}
+\clearpage
+
+\chapter{Theoretical Background}
+\subfile{Theory/sm.tex}
+\subfile{Theory/mcgen.tex}
+\subfile{Theory/exp.tex}
+\subfile{Theory/obs.tex}
+\clearpage
+
+\chapter{Dataset}
+\subfile{Analysis/dataset.tex}
+\clearpage
+
+\chapter{Monte-Carlo-Model Comparison}
+\subfile{Analysis/rivet.tex}
+\clearpage
+
+\chapter{Underlying Event}
+\subfile{Analysis/ue.tex}
+\clearpage
+
+\chapter{Summary}
+\subfile{summary.tex}
+\clearpage
+
+\appendix
 
 \end{document}
