@@ -3,16 +3,43 @@
 
 \section{Monte Carlo Event Generators} \label{mceg}
 
-Proton-proton collisions result in a sequence of complex mechanisms reaching from primary interactions to the formation of hadrons, as described above. In order to test the theories and models describing these mechanisms they are implemented in software libraries called Monte Carlo event generators (MCEG). MCEG fully simulate the chained mechanisms involved in particle collisions and provide the derived kinematic properties of the final-state particles as a result. These kinematic properties can be compared to similar observables obtained from measurements in order to conclude whether the implemented theories and models are viable. It is also possible to compare the validity and accuracy of different models in this way by collating the results from different MCEG. \\ 
-In general MCEG divide the simulation of particle collisions into five phases as depicted in figure \ref{theory:MCEG}. 
+Proton-proton collisions result in a sequence of complex mechanisms reaching from primary interactions to the formation of hadrons, as described above. In order to test the theories and models describing these mechanisms they are implemented in software libraries called Monte Carlo event generators (MCEG). MCEG fully simulate the chained mechanisms involved in particle collisions and provide the derived kinematic properties of the final-state particles as a result. These kinematic properties can be compared to similar observables obtained from measurements in order to conclude whether the implemented theories and models are viable. It is also possible to compare the validity and accuracy of different models in this way by collating the results from different MCEG. 
+
+\textcolor{blue}{MC corrections to data??}
 
 \begin{figure}
     \centering
-    \includegraphics[width=.7\linewidth]{Theory/img/MCEG1.png}
+    \includegraphics[width=.8\linewidth]{Theory/img/MCEG1.png}
     \caption{Caption}
     \label{theory:MCEG}
 \end{figure}
 
+\subsection{Simulation process}
+
+MCEG aim to implement the theories and models explained in chapter \ref{theory:pp_collisions} into one simulation program that is able to reproduce the observables as measured in experiments. The cross sections as measured by these experiments reflect the probabilistic nature of the processes and mechanisms involved in particle collisions. MCEG use the measured cross sections and probabilities to randomly choose the processes and kinematic properties constituting each simulated event. \\
+
+In general MCEG divide the simulation of particle collisions into five phases \cite{MCEG}, as depicted in figure \ref{theory:MCEG}. 
+Experiments are mostly interested in measuring events containing (at least) one hard process. It is therefore sensible to start the simulation with a hard elementary scattering between two partons. This so called primary collision is also the hardest, i.e. highest momentum-transfer, parton-parton sub-collision of the event. The elementary process at the heart of this primary collision is chosen randomly according to the cross sections sketched in eq. \ref{eq:cross_section}. \\
+The primary collision is followed by the simulation of the resulting parton shower. Starting from the colour charged products of the primary collision, the cascade of (gluon) Bremsstrahlung is generated according to the probabilities given by the DGLAP splitting functions \cite{DGLAP}, see eq. \ref{eq:DGLAP}. This will also include any initial- and final-state radiation that is produced during the parton-parton collision. The parton shower is terminated once the particles reach the limit of where pQCD is applicable, implemented in a momentum-cutoff parameter. The resulting soft gluons and quarks are formed into hadrons, using one (or both) of the phenomenological hadronisation models mentioned above, cluster or string hadronisation. The hadronisation process will result in bound-state particles that may be unstable, and are decayed into final-state particles at the end of the simulation process. \\
+While the primary hard collision provides the main fraction of produced particles for the majority of the events, the full proton-proton collision consists of additional parton-parton interactions that contribute to the final-state multiplicity. All these additional underlying processes are summarised in the so called underlying event.  
+At the center-of-mass energies reached at the LHC it is very likely to have more than one parton-parton interaction, called multiparton-interactions (MPI), within one pp collision, as can be seen from the cross sections shown in figure \ref{theory:pp_cross_section}. One pp collision usually consists of ?? to ?? MPI \cite{MPIs}.
+Since the PDFs, see figure \ref{theory:PDF}, fall very steeply towards higher momenta, the MPI are expected to be (much) softer than the primary collision. They are, however, assumed to still be within the range of pQCD \cite{MPI_hardness}. The simulation process for each MPI is hence essentially the same as for the primary collision. \\
+As already mentioned for the primary collision, are the particles formed during the hadronisation phase not necessarily stable. After the hadronisation is completed for all parton-parton sub-collisions, the resulting unstable particles will be decayed according to branching ratios acquired from experiment.
+
+The MPI as well as the primary collision are extremely localised inside of the colliding protons. They consequently do not interact with each other, and can be simulated separately from each other. They are, however, not completely independent of each other. Since the initial-state protons are colour-neutral states, and the colour-charge must be conserved throughout the whole event, all particles of the event are colour-connected to each other \cite{color_coherence}. It is therefore possible that there will be colour cross talk between the MPI, and it might be more feasible to simulate all parton-parton subcollisions simultaneously. This effect of colour coherence can influence the multiplicity as well as the momentum distributions of the final-state particles as shown by ?? \cite{color_coherence_results}.  \\
+
+
+\textcolor{blue}{flux tubes??}\\
+
+Figure \ref{theory:MCEG} depicts the primary collision between two partons, the exemplary evolution of the resulting parton shower phase and the subsequent hadronisation in blue. The underlying event processes are depicted in green.\\
+
+
+
+
 \subsection{PYTHIA} \label{gendiff}
+
+\subsection{EPOS LHC}
+
+\subsection{Rivet}
 
 \end{document}
