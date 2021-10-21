@@ -2,35 +2,73 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-The center-of-mass energies reached in current high energy proton-proton collisions are sufficient to resolve the internal structure of the colliding particles. Proton-proton collisions are then effectively collisions of the proton constituents, called partons. The modelling of particle production in pp collisions therefore depends on the description of the initial-state partons and their interactions as well as mechanisms responsible for converting part of the initial center-of-mass energy into new final-state particles. The fundamental theoretical theories and models, currently believed to best describe these particle production mechanisms, are briefly depicted in the following chapters. Subsequently the implementation of these  theories and models in so called Monte Carlo event generators, enabling a complete simulation of particle production as expected in particle collisions are discussed. Finally a short description of the ALICE experiment and the relevant sub-detectors used for the analysis described in this thesis is given.
+The center-of-mass energies reached in current high energy proton-proton collisions are sufficient to resolve the internal structure of the colliding particles. Proton-proton collisions are then effectively collisions of the proton constituents, called partons. The modelling of particle production in pp collisions therefore depends on the description of the initial-state partons and their interactions as well as mechanisms responsible for converting part of the initial center-of-mass energy into new final-state particles. The fundamental theoretical theories and models, currently believed to best describe these particle production mechanisms, are briefly depicted in the following chapters. Subsequently the implementation of these theories and models in so called Monte Carlo event generators, enabling a complete simulation of particle production as expected in particle collisions, are discussed.
 
-\section{Standard Model}
+\section{The Strong Interaction}
 
-The most fundamental description of particle collisions is achieved by quantum field theories. They describe the interactions between elementary particles.
+The key mechanisms responsible for almost all of the generation of new particles in particle collisions can be ascribed to either the strong or the electromagnetic interaction. The electromagnetic interaction is responsible for the production of photons and leptons, i.e. e\textsuperscript{+}e\textsuperscript{-} and \textmu\textsuperscript{+}\textmu\textsuperscript{-} pairs, through bremsstrahlung. The remainder of the generated particles, the hadrons such as protons and neutrons, are produced mainly through the strong interaction. In contrast to the produced leptons, hadrons are composite particles consisting of partons, i.e. quarks q and gluons g. 
 
-\subsection{The Strong Interaction}
+The strong interaction is one of the fundamental forces from which all existing interactions can be derived. The corresponding theory is called quantum chromodynamics (QCD). The charge subjecting a particle to the strong interaction is called colour charge, in analogy to colour theory in visual arts. There are three different kinds of colour charge, typically denoted red, green and blue, and their corresponding anticolours antired, antigreen and antiblue. A colour neutral or white particle can be created by combining either a colour with it's corresponding anticolour or the three colours respectively anticolours. The interaction between coloured particles is mediated by the gluons, the force carriers of the strong interaction. \\
+The currently known elementary particles to carry colour charge are the quarks, their antiparticles the antiquarks and gluons. A quark carries exactly one colour, an antiquark exactly one anticolour. The gluons carry a combination of colour and anticolour charges, in first approximation one colour and one anticolour. It is therefore possible for gluons to interact with each other. This is a unique property of the strong interaction in contrast to e.g. the electromagnetic interaction where the force carriers, the photons, are electrically neutral. This gives rise to some of the key aspects of the strong interactions that will be discussed in the following chapter.\\
+In nature all observed free particles are colour neutral, i.e. quarks only exist inside of colour neutral bound states, the hadrons. This property of the strong interaction is called confinement. The quantum numbers of the hadrons such as spin and electric charge are determined by the constituent quarks, also called valence quarks. 
+Currently six different kinds, also denoted flavours, are known. An overview and some of their properties are given in table \ref{theory:quark_overview}. Hadrons can be grouped according to their quark content into (anti)baryons containing three (anti)quarks, and mesons containing one quark and one antiquark. \\
+The valence quarks are connected to each other through continuous exchange of gluons. The gluons can split into quark antiquark pairs that recombine into gluons after a short time. The additional quarks are called sea quarks. The sea quarks and gluons carry part of the hadrons momentum, and contribute to it's total mass. It is also possible for them to interact with other partons in hadron-hadron collisions.  
 
-The strong interaction is one of three fundamental forces relevant on the scale of elementary particles
+{\renewcommand{\arraystretch}{1.1} 
+\begin{table}[t!]
+    \begin{center}
+    \begin{tabular}{m{2.7cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}}  
+              & up (u)  & charm (c)  & top (t)  \\
+         \hline 
+         mass (approx.) & 2.2 MeV/c\textsuperscript{2} & 1.27 GeV/c\textsuperscript{2} & 172.8 GeV/c\textsuperscript{2} \\
+         electric charge & 2/3 & 2/3 & 2/3  \\
+         spin & 1/2 & 1/2 & 1/2 \\
+    \end{tabular} 
+    \end{center}
+    
+    \vspace{2mm} 
+ 
+    \begin{center}
+    \begin{tabular}{m{2.7cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}}  
+           & down (d) & strange (s) & bottom (b)  \\
+         \hline 
+         mass (approx.) & 4.7 MeV/c\textsuperscript{2} & 93 MeV/c\textsuperscript{2} & 4.18 GeV/c\textsuperscript{2} \\
+         electric charge & -1/3 & -1/3 & -1/3  \\
+         spin & 1/2 & 1/2 & 1/2 \\
+    \end{tabular}
+    \end{center}
+    \caption{Known quarks as well as their estimated masses, their spin and their electric charge in multiples of the elementary charge $e$ \cite{quarkTable}.}
+    \label{theory:quark_overview}
+\end{table}
+}
 
-The key mechanisms responsible for most of the generation of new particles in particle collisions can be ascribed to the strong interaction. The colliding initial-state particles as well as the newly generated final-state particles consist of quarks q, anti-quarks $\bar{\text{q}}$ and gluons g, and are called hadrons. Hadrons are divided into baryons (qqq) and mesons (q$\bar{\text{q}}$)
+\subsection{Confinement and Asymptotic Freedom} \label{theory:confinement}
 
-\begin{enumerate}
-    \item[-] quarks, color charges
-    \item[-] Confinement, color charged
-    \item[-] running coupling and potential
-    \item[-] Quarks form Hadrons (-> partons)
-\end{enumerate}
-
-\section{Particle Collisions} \label{theory:pp_collisions}
-
-\begin{figure}
+\begin{figure}[t!]
     \centering
-    \includegraphics[width=0.75\textwidth]{Theory/img/partonshower.png}
-    \caption{Depiction of a possible variation of a parton shower, originating from an elementary scattering.}
-    \label{theory:parton_shower}
+    \includegraphics[width=.6\textwidth]{Theory/img/alphas-v-Q-2019.pdf}
+    \caption{Summary of measurements of $\alpha_\text{s}$ as a function of the energy scale $Q$. The respective degree of QCD perturbation theory used in the extraction of $\alpha_\text{s}$ is indicated in brackets \cite{quarkTable}.}
+    \label{theory:alphas}
 \end{figure}
 
-In high energy particle collisions, the center-of-mass energies are sufficiently high for the hadrons to surmount each others repelling potential. The internal partons of the hadrons are then close enough in space time to directly interact with each other. Particle collisions therefore consist of one or more parton-parton sub-collisions. \\
+The strength of a given fundamental interaction is characterised by the so-called coupling constant. It depends on the momentum scale $Q^2$ of the considered process, this is often denoted as running coupling. The coupling constant of the strong interaction $\alpha_\text{s}$ shows an especially strong dependence on the momentum scale. This is caused by the self interaction property of the gluons. The behaviour of $\alpha_\text{s}$ as predicted from QCD as well as various measurements confirming the prediction are shown in figure \ref{theory:alphas}.
+At low momentum scales, respectively large distances between colour charges, the coupling is strong. This is what causes the quarks to be confined inside of the hadrons. Towards higher momentum scales the coupling strength decreases. At very high momentum scales $Q^2 \gg 1 \text{GeV}$, respectively short distances, the colour charges can move quasi free in the colour fields. This is called asymptotic freedom. \\
+This duality of the strong interaction can best be visualised by considering a quark antiquark pair q\textbar{q}, i.e. a meson. The strong interaction acting between the q\textbar{q} pair can then be visualised as a rubber band or a string. When the q and \textbar{q} are close the coupling between them is weak, they can move quasi independent of each other. When the distance between them becomes larger, the colour field lines stretching between them become more dense, effectively becoming a string with constant string tension. The further the q and \textbar{q } separate, the more of their kinetic energy is converted into potential energy stored in the string. When the kinetic energy of the quarks is converted completely into potential energy, the quarks will change their direction and move towards each other. This visualisation is also referred to as yo-yo model, due to the yo-yo like motion of the q\textbar{q} pair. If the energy stored in the string is large enough, it is possible for a new \textbar{q}\textsubscript{new}q\textsubscript{new} pair to tunnel out of the vacuum. This will result in two new mesons q\textbar{q}\textsubscript{new} and q\textsubscript{new}\textbar{q}. This is often denoted as string breaking.  
+
+An important tool in the calculation of interactions in QED and QCD is perturbation theory \cite{pQM, pQFT}. 
+Any fundamental process between two elementary particles can have additional contributions from vacuum fluctuations. 
+%It is for example possible that an exchanged photon in an $e^-e^- \rightarrow e^-e^-$ process splits into an $e^+e^-$ pair and immediately recombines such that the result is not changed. These vacuum loops, however, have to be considered in calculations. The number of additional vacuum loops can potentially be infinite. 
+Each vacuum loop contributes to the calculation with a factor $\alpha^2$. In the case that the coupling constant is small, i.e. $\alpha \ll 1$, the higher order vacuum loops can be neglected. In QCD this is only valid for sufficiently high momentum scales $Q^2 \gg 1 \text{GeV/c\textsuperscript{2}}$. For low momentum scales $Q^2 \approx 1 \text{GeV/c\textsuperscript{2}}$, where the coupling is of order $\alpha_\text{s} \approx 1$ perturbation theory is not applicable. Instead phenomenological models have to be devised, that give sufficiently good descriptions of the non-perturbative phenomena. The combination of QCD and perturbation theory is often denoted as perturbative QCD (pQCD).
+
+\subsection{Quark-Gluon Plasma}
+
+In ordinary matter the quarks and gluons are confined inside of the hadrons. In systems of extreme densities and temperature, however, the colour charges can move around quasi freely in the region of asymptotic freedom. In analogy to systems with freely moving electrical charges such a system is denoted quark-gluon plasma (QGP). It is assumed that a QGP can be recreated in an experiment by colliding heavy ions, typically lead nuclei. The strongly Lorentz contracted ions exhibit high parton densities, leading to high energy densities during the collision. \\
+In the case that a QGP is present, the produced particles exhibit features of the collective expansion of the created medium. Recent studies, however, have found signs of collective behaviour in proton-proton and proton-lead collisions as well, where the production of a QGP is not expected \cite{smolQGP}. It is therefore crucial to study possible other causes of collective effects, and to differentiate them from the QGP. An important observable in these studies is the so-called underlying event, see chapter \ref{obs:underlying_event}, that is sensitive to interactions between differen parton-parton sub-collisions.
+
+
+\section{Hadron-Hadron Collisions} \label{theory:pp_collisions}
+
+In high-energy particle collisions, the center-of-mass energies are sufficiently high for the hadrons to surmount each others repelling potential. The internal partons of the hadrons are then close enough in space time to directly interact with each other. Particle collisions therefore consist of one or more parton-parton sub-collisions. \\
 One such sub-collision is effectively an elementary interaction between two partons as defined by QCD. Since quarks carry electric charge in addition to their colour charge, QED processes are in principle possible but rare due to the smaller coupling constant ($\alpha \approx 1/137$). Possible elementary processes include gluon-gluon, gluon-quark and quark-quark scattering as well as quark-anti-quark and gluon-gluon annihilation: 
 \begin{linenomath}
 \begin{align*}
@@ -38,7 +76,6 @@ One such sub-collision is effectively an elementary interaction between two part
     & \text{annihilation:} & gg &\ce{->} q\bar{q}  & q\bar{q} &\ce{->} q\bar{q} &q\bar{q} &\ce{->} gg 
 \end{align*}
 \end{linenomath}
-
 The incoming and outgoing partons of these sub-collisions as well as the hadron remnants are colour-charged particles. In the same way as scattered electrical charges emit photon-bremsstrahlung, any colour-charged particles involved in the collision radiate gluons. Since gluons carry colour-charge, in contrast to the electrically neutral photons, any emitted gluon might trigger further radiation:
 \begin{linenomath}
 \begin{align*}
@@ -46,12 +83,23 @@ The incoming and outgoing partons of these sub-collisions as well as the hadron 
 \end{align*}
 \end{linenomath}
 
-The result is a cascade of bremsstrahlung, denoted parton shower, that consists mostly of gluons and quarks but includes some photon-bremsstrahlung from the electrically charged particles. A possible variation of a parton shower, starting from the elementary process, is sketched in figure \ref{theory:parton_shower}. \\
-The parton shower continues until the phase space is filled with (mostly) soft particles and confinement forces the produced quarks and gluons to hadronise, i.e. form colour neutral hadrons. These might be unstable resonances which will then decay into final-state particles as measured by experiments. \\ In the case that the final-state particles resulting from one elementary process respectively parton-parton sub-collision end up close in phase space, they are denoted as a particle jet. Jets typically result from sub-collisions with high momentum transfer, since gluon-bremsstrahlung from particles carrying large momenta is emitted at small angles.\\
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Theory/img/partonshower.png}
+    \caption{Depiction of a possible variation of a parton shower, originating from an elementary scattering.}
+    \label{theory:parton_shower}
+\end{figure}
 
-The number of particles, produced in hadron-hadron collision, and their kinematics therefore depend on the evolution of the parton shower, the hadronisation and the total number of parton-parton sub-collisions. The elementary processes as well as the parton showers involve large momentum transfers, and can therefore be described using QCD (QED) and perturbation theory. Since these theories are well tested, there is little uncertainty in the description of these processes, as briefly depicted in the next section. The hadronisation phase, however, commences at relatively low momentum scales, where the limits of pQCD are reached. It is therefore necessary to employ phenomenological models. There are two main classes of hadronisation models currently in use, the string and the cluster hadronisation, which will be depicted in section \ref{theory:hadronisation}.  The number of parton-parton sub-collisions depends on the center-of-mass energy of the colliding hadrons as well as the spatial distribution of their constituents. At LHC energies the majority of hadron-hadron collisions consist of more than one sub-collision. In this case the sub-collisions are also called multiple parton interactions (MPI). The details of MPI and their influence on particle production will be discussed in section \ref{theory:MPI}.
+The result is a cascade of bremsstrahlung, denoted parton shower, that consists mostly of gluons and quarks but includes some photon-bremsstrahlung from the electrically charged particles. A possible variation of a parton shower, starting from the elementary process, is sketched in figure \ref{theory:parton_shower}. \\
+The parton shower continues until the phase space is filled with (mostly) soft particles and confinement forces the produced quarks and gluons to hadronise, i.e. form colour neutral hadrons. These might be unstable resonances which will then decay sequentially into final-state particles as measured by experiments. \\ In the case that the final-state particles resulting from one elementary process respectively parton-parton sub-collision end up close in phase space, they are denoted as a particle jet. Jets typically result from sub-collisions with high momentum transfer, since gluon-bremsstrahlung from particles carrying large momenta is emitted at small angles.
+
+The number of particles, produced in hadron-hadron collision, and their kinematics therefore depend on the evolution of the parton shower, the hadronisation and the total number of parton-parton sub-collisions as well as their interaction. The elementary processes as well as the parton showers involve large momentum transfers, and can therefore be described using QCD (QED) and perturbation theory. Since these theories are well tested, there is little uncertainty in the description of these processes, as briefly depicted in the next section. The hadronisation phase, however, commences at relatively low momentum scales, where the limits of pQCD are reached. It is therefore necessary to employ phenomenological models. There are two main classes of hadronisation models currently in use, the string and the cluster hadronisation, which will be depicted in section \ref{theory:hadronisation}.  \\ The number of parton-parton sub-collisions depends on the center-of-mass energy of the colliding hadrons as well as the spatial distribution of their constituents. At LHC energies the majority of hadron-hadron collisions consist of more than one sub-collision. In this case the sub-collisions are also called multiple parton interactions (MPI). The details of MPI and their influence on particle production will be discussed in section \ref{theory:MPI}.
 
 \subsection{Cross Sections}
+
+The number of produced particles in hadron-hadron collisions vastly depends on the evolution of the parton shower, and the number of emitted quarks and gluons that hadronise. The parton shower is in principle expected to be independent of the elementary interaction and the incoming particles \cite{jet_universality}, i.e. it is not relevant whether the outgoing particles were produced through annihilation or elastic scatterings. This concept, denoted jet universality, enables the use of many results obtained from $e^+e^-$ scatterings also for hadron-hadron scatterings. The bremsstrahlung spectrum, however, depends on the kind of the radiating particle, it is therefore necessary to determine the originating elementary process.\\
+Since the final-state spectra of hadron-hadron collisions are analysed as the combined total of many million measured events, it is sufficient to describe the elementary scattering and the parton shower on an average basis. It is therefore of interest to model the probabilities for the involved processes. 
+In particle physics the probabilities of measuring given processes are often quantified as cross sections, measured in units of area called barn $1\text{b} = 10^{-28}\text{m}^2$. 
 
 \begin{figure}[t!]
     \centering
@@ -68,15 +116,12 @@ The number of particles, produced in hadron-hadron collision, and their kinemati
     \label{theory:PDF}
 \end{figure}
 
-The number of produced particles in hadron-hadron collisions vastly depends on the evolution of the parton shower, and the number of emitted quarks and gluons that hadronise. The parton shower is in principle expected to be independent of the elementary interaction and the incoming particles \cite{jet_universality}, i.e. it is not relevant whether the outgoing particles were produced through annihilation or elastic scatterings. This concept, denoted jet universality, enables the use of many results obtained from $e^+e^-$ scatterings also for hadron-hadron scatterings. The bremsstrahlung spectrum, however, depends on the kind of the radiating particle, it is therefore necessary to determine the originating elementary process.\\
-Since the final-state spectra of hadron-hadron collisions are analysed as the combined total of many million measured events, it is sufficient to describe the elementary scattering and the parton shower on an average basis. It is therefore of interest to model the probabilities for the involved processes. 
-In particle physics the probabilities of measuring given processes are often quantified as cross sections, measured in units of area called barn $1\text{b} = 10^{-28}\text{m}^2$. \\
-
-The cross section $\sigma_{\epsilon}$ for any possible elementary process between partons depends on the involved initial-state elementary particles and their kinematic properties as well as the responsible interaction, and can be calculated using Fermis golden rule \cite{golden_rule} and perturbation theory.\\
-Since the kinematics of the whole hadron is a superposition of several parton four-momenta, one parton holds only a fraction of the whole hadron momentum. The probability to find a specific parton $i$, i.e. gluon or quark, with fraction $x$ of the hadron momentum is given by so-called parton distribution functions (PDF) $f_i(x;Q^2)$. They depend on the momentum scale $Q$ of the involved processes, since the \textcolor{blue}{resolution} increases with increasing momentum transfer. PDFs cannot be derived from first principles and must be calculated from measurement. An example of gluon-PDFs, calculated to different orders of perturbation theory, is shown in figure \ref{theory:PDF}. It can be assumed that the elementary cross section is independent of the PDFs.  The total cross section for any interaction $\epsilon$ between two partons with flavour a and b inside of the hadrons 1 and 2 is hence given by the elementary cross section $\sigma_{\epsilon}$ modified with the corresponding PDFs, and integrated over all possible momentum fractions $x$:
+The cross section $\sigma_{\epsilon}$ for any possible elementary process between two partons depends on the final-state phase space of the outgoing particles and the dynamics of the process, as stated by Fermi's golden rule. The dynamics of the elementary processes are determined by the corresponding interaction, i.e. QED or QCD, and can be calculated using Feynman rules and perturbation theory \cite{griffiths:golden_rule, MCEG:review}. \\
+Since the kinematics of the whole hadron is a superposition of several parton four-momenta, one parton holds only a fraction of the whole hadron momentum. The probability to find a specific parton $i$, i.e. gluon or quark, with fraction $x$ of the hadron momentum is given by so-called parton distribution functions (PDF) $f_i(x;Q^2)$. They depend on the momentum scale $Q$ of the involved processes, since the resolution of single gluons increases with increasing momentum transfer. PDFs cannot be derived from first principles and must be calculated from measurement. An example of gluon-PDFs, calculated to different orders of perturbation theory, is shown in figure \ref{theory:PDF}. \\ 
+It can be assumed that the elementary cross section is independent of the PDFs.  The total cross section for any interaction $\epsilon$ between two partons with flavour a and b inside of the hadrons 1 and 2 is hence given by the elementary cross section $\sigma_{\epsilon}$ modified with the corresponding PDFs, and integrated over all possible momentum fractions $x$:
 
 \begin{equation}
-    \sigma_0 (\epsilon; a, b) = \int_0^1  dx_a dx_b\  f^{h_1}_a(x_a;Q^2) f^{h_2}_b(x_b;Q^2) \sigma_{\epsilon}(Q^2)
+    \sigma_0 (\epsilon; a, b) = \int_0^1  dx_a dx_b\  f^{h_1}_a(x_a;Q^2) f^{h_2}_b(x_b;Q^2) \sigma_{\epsilon}(Q^2) \label{eq:cross_section}
 \end{equation}
 \\
 The principle of jet universality dictates that the emission of bremsstrahlung only depends on the kind, i.e. quark or gluon, of the emitting particles, but is independent of the process that produced them. This allows for the cross section of a specific parton shower configuration to be written as the factorisation of the cross section $\sigma_0$ of the initial parton-parton interaction and the probabilities for independent parton emission $P_{i\rightarrow ij}$ or splitting $P_{i\rightarrow jk}$. These probabilities are given by the (spin averaged) Dokshitzer-Gribov-Lipatov-Altarelli-Parisi (DGLAP) splitting kernels:
@@ -87,24 +132,94 @@ The principle of jet universality dictates that the emission of bremsstrahlung o
 \end{linenomath}
 
 They only depend on the momentum fraction $z$ that the emitted particle receives from it's parent particle. The cross section of any initial interaction accompanied by the emission of one particle can then be calculated as follows:
-
 \begin{equation}
     d\sigma \approx \sigma_0(\epsilon; a, b) \sum_{partons} \frac{\alpha_s}{2\pi} \frac{d\theta^2}{\theta^2} dz P_{i\rightarrow ij}(z)
 \end{equation}
-
+\\
 The summation specifies that either outgoing parton of type i can emit the additional parton j. \\
-Further emissions can be added iteratively by multiplication of the corresponding DGLAP splitting kernel. 
+Further emissions can be added iteratively by multiplication of the corresponding DGLAP splitting kernel. The iteration is usually ordered by momentum in descending order.
 
-\begin{figure}[t!]
-  \centering
-  \includegraphics[width=0.6\textwidth]{Theory/img/pp_cross_section.pdf}
-  \captionof{figure}{A figure}
-  \label{theory:pp_cross_section}
-\end{figure}
 
 \subsection{Hadronisation Models} \label{theory:hadronisation}
 
-\subsection{Multiparton Interactions} \label{theory:MPI}
+The iterative formulation of the parton-shower evolution, and especially the calculation of the DGLAP splitting functions as explained above rely heavily on the use of perturbation theory. At small momentum scales, however, where the strong coupling becomes large, pQCD is no longer applicable. It is therefore not possible to describe the final stages of the parton shower evolution, the fragmentation of quarks and gluons into bound-state, colour neutral hadrons, with QCD directly. Instead QCD-inspired phenomenological models are employed. There are two main classes of models in current use, the string and the cluster model. The string model is discussed first.
 
+\subsubsection{String Hadronisation}
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=.8\textwidth, clip=true, trim = 3.1cm 0cm 0cm 0cm]{Theory/img/string_hadronisation_spacetimestructure.jpg}
+    \caption{The motion and breakup of a string system, with the two transverse degrees of freedom suppressed. Diagonal lines are (anti)quarks, horizontal ones are snapshots of the string field \cite{MCEG:review}.}
+    \label{theory:string_hadronisation}
+\end{figure}
+
+The most well-developed model of string hadronisation is the Lund string model \cite{MCEG:review, MCEG:lectures,heavy_quark_suppression}. It is based on the principles of confinement and string breaking, as explained in section \ref{theory:confinement}. Any q\textbar{q} pair produced during the parton shower is originally close in space time. As the q and the \textbar{q} are accelerated apart from each other, a colour string stretches between them. The potential energy stored in the string rises as the q and \textbar{q} move apart, and the string may break by production of a new q\textbar{q} pair. This results in two independent strings between one q\textbar{q}\textsubscript{new} and q\textsubscript{new}\textbar{q} pair respectively. Further string breaks may occur, as long as the invariant mass of the q\textbar{q} pair is large enough. A sketch of the space-time structure of the string breaks can be seen in figure \ref{theory:string_hadronisation}.\\
+Gluons are treated as kinks on the colour strings, meaning that for a qg\textbar{q} string one string piece stretches from q to g and the other from g to \textbar{q}. Several gluons can be included in between of a q\textbar{q} pair in this way, with the string stretching from the q over all the gluons to the \textbar{q}. Since the gluons carry energy and momentum, they will influence the movement of the string and possible string fragments. It is also possible to have closed gluon loops, i.e. ggg strings. \\
+A system with $n-1$ string breaks between the initial q\textbar{q} pair produces $n$ primary hadrons, i.e. mesons q\textbar{q}\textsubscript{1}, q\textsubscript{1}\textbar{q}\textsubscript{2}, q\textsubscript{2}\textbar{q}\textsubscript{3}, ...,  q\textsubscript{n-1}\textbar{q}. Baryon production can be explained by the so-called popcorn model \cite{popcorn}, where baryons appear from the successive production of several q\textbar{q} pairs. 
+
+The type of the produced hadrons, i.e. it's quark content, depends on the flavour of the q\textbar{q} pairs produced through string breaks. Since the produced q\textbar{q} pairs have to tunnel out of the vacuum, heavier quark flavours are suppressed as \cite{heavy_quark_suppression}:
+\begin{linenomath}
+\begin{equation*}
+    \text{u}\bar{\text{u}} : \text{d}\bar{\text{d}} : \text{s}\bar{\text{s}} : \text{c}\bar{\text{c}} \ \approx \ 1 : 1 : 0.3 : 10^{-11}
+\end{equation*}
+\end{linenomath}
+It is hence not expected that charm or heavier quarks are produced during hadronisation, they are rather produced during the parton shower.
+
+\subsubsection{Cluster Hadronisation}
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Theory/img/colour_flow.jpg}
+    \caption{Colour structure of a parton shower, where the gluons are approximated as colour-anticolour pairs \cite{MCEG:review}. The solid lines represent the quarks, the curly lines the gluons.}
+    \label{theory:colourflow}
+%\end{figure}
+\vspace*{\floatsep}
+%\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Theory/img/hadronisation.jpg}
+    \caption{Sketch of cluster (left) and string (right) hadronisation based on the example of $e^+e^- \ce{->} q\bar{q}$ \cite{hadronisation:sketches}. Solid lines depict leptons and quarks, the wavy line depicts the intermediate photon, and the curly lines depict the gluons.}
+    \label{theory:hadronisation_comp}
+\end{figure}
+
+In contrast to the string model, the cluster model takes into account the colour structure of the parton shower. Gluons can be represented, in first approximation, as a colour-anticolour pair. Each colour line in the parton shower is then connected to a corresponding anticolour line, see figure \ref{theory:colourflow}. It can be shown that these colour anticolour pairs tend to end up close in phase space, this property is called preconfinement \cite{preconfinement}. \\
+The cluster model uses the concept of preconfinement to form colour-neutral clusters between colour-anticolour pairs, that will decay into observable hadrons \cite{MCEG:review, MCEG:lectures}. At the end of the parton shower, defined by a cutoff scale $Q_0$, the emitted gluons are required to split non-pertubatively into q\textbar{q} pairs. Each q (\textbar{q}) is then colour-connected to a neighbouring \textbar{q} (q) resulting from a different splitting. The colour-connected q\textbar{q} form (colour neutral) clusters with mesonic quantum numbers. Most of the clusters have masses around $Q_0$, they are decayed into observables hadrons through quasi-two-body decay. This is not reasonable for the heavier clusters, they are split into lighter clusters through binary fission. Once the masses of the sub-clusters fall below a threshold of typically 3-4 GeV, they follow the standard two-body decay. Due to the typically low invariant masses of the clusters, heavier quark flavours are suppressed, as in the string model.
+Figure \ref{theory:hadronisation_comp} shows the structure of cluster hadronisation in comparison to the string model.
+
+\subsection{Multiple Parton Interactions} \label{theory:MPI}
+
+\begin{figure}[t!]
+    \centering
+    \begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Theory/img/cross_section_mpi.jpg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Theory/img/mpi_dist.jpg}
+    \end{subfigure}
+    \caption{Integrated $2 \rightarrow 2$ parton cross section as function of $p_\text{T,min}$ for 8 TeV pp collisions, with two different $\alpha_\text{s}$ and PDF choices, compared with the measured $\sigma_\text{inel}$ (left), and number of MPI in inelastic events for 7 TeV pp collisions (right) \cite{MonashTune}.}
+    \label{theory:mpi}
+\end{figure}
+
+At LHC energies it is very likely to have several parton-parton sub-collisions, multiple parton interactions (MPI) in a single hadron-hadron collision. This can be visualised by comparing the corresponding cross sections. The differential perturbative, i.e. calculable with perturbation theory, cross section for $2 \rightarrow 2$ parton-parton scattering scales with the momentum transfer $p_{\text{T}}$ roughly as \cite{IntroToQCD, MCEG:review}:
+
+\begin{equation}
+    d\sigma_{2\rightarrow2} \propto \frac{dp_\text{T}^2}{p_\text{T}^4}
+\end{equation}
+
+Since $d\sigma_{2\rightarrow2}$ is divergent towards small momentum transfers $p_{\text{T}} \rightarrow 0$, the total cross section is calculated as a function of a lower cutoff parameter $p_{\text{T,min}}$ that has to be determined from data.
+
+The left side of figure \ref{theory:mpi} shows the cross section $\sigma_{2\rightarrow2}(p_{\text{T}}\geq p_{\text{T,min}})$ as a function of $p_{\text{T,min}}$ at 8 TeV center-of-mass energy, calculated for different PDF sets. In comparison the total inelastic proton-proton cross section as measured by TOTEM \cite{TOTEM_crosssection} is shown. For small cutoff parameters $p_{\text{T,min}} < 5\ \text{GeV}$, the parton-parton cross section exceeds the total inelastic proton-proton cross section. This strongly indicates that more than one sub-collision is happening in one pp collision. The intersection at $p_{\text{T,min}} \approx 5\ \text{GeV}$ suggests that each pp collision contains on average a hard sub-collision with a momentum transfer of at least 5 GeV. Since the gluon and quark PDFs steeply fall towards higher momentum fractions $x$, as can be seen in figure \ref{theory:PDF}, it is expected that additional sub-collisions are soft in comparison. This is supported by the corresponding cross sections. Events are, therefore, typically viewed as a composition of a hard jet and accompanying softer MPI, typically denoted underlying event.\\
+The average number of MPIs per pp collision, assuming they are independent and uncorrelated, can then be estimated from the cross sections as follows:
+
+\begin{equation}
+    \langle n_\text{MPI} \rangle (p_\text{T,min}) \approx \frac{\sigma_{2\rightarrow2}(p_{\text{T}}\geq p_{\text{T,min}})}{\sigma_{\text{tot}}}
+\end{equation}
+\\
+The right side of figure \ref{theory:mpi} shows the probability distribution of n\textsubscript{MPI} as estimated by the event generator PYTHIA8 using different tunes, i.e. sets of parameters. It can be discerned that 60 - 70\% of all generated events contain at least two MPI, and 30\% contain at least five MPI. 
+
+Since the (additional) parton-parton sub-collisions lie within the limits of perturbation theory, the same theoretical treatment as described above can be applied. The individual processes are extremely localised inside the colliding hadrons, and in principle independent. The initial-state partons, however, are contained inside colour neutral hadrons. The MPI are therefore colour-connected to each other leading to colour cross talk between the MPI, this is called colour reconnection. The strings (clusters) that span between the MPI systems give rise to most of the soft particle production in the events \cite{MCEG:review}. Furthermore the additional sub-collisions can lead to very high string (cluster) densities, especially in central hadron-hadron or hadron-nucleus collisions. This could lead to strings (clusters) overlapping in space time, and hence to interactions between individual strings (clusters). Possible effects are string shoving \cite{string_shoving}, i.e. mutual repulsion, and increasing string tension, i.e. the formation of colour ropes \cite{rope_hadronisation}, giving rise to enhanced strangeness production.
+This could explain the QGP-like behaviour observed recently in pp and p-Pb collisions without the presence of a medium.
 
 \end{document}

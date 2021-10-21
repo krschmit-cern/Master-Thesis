@@ -1,45 +1,71 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-\section{Monte Carlo Event Generators} \label{mceg}
+\section{Monte Carlo Event Generators} 
 
 Proton-proton collisions result in a sequence of complex mechanisms reaching from primary interactions to the formation of hadrons, as described above. In order to test the theories and models describing these mechanisms they are implemented in software libraries called Monte Carlo event generators (MCEG). MCEG fully simulate the chained mechanisms involved in particle collisions and provide the derived kinematic properties of the final-state particles as a result. These kinematic properties can be compared to similar observables obtained from measurements in order to conclude whether the implemented theories and models are viable. It is also possible to compare the validity and accuracy of different models in this way by collating the results from different MCEG. 
+%In the following the simulation process as implemented in most MCEG is briefly explained. Subsequently the event generators relevant for the analysis presented in this work, \pythia{8} respectively \textsc{Angantyr}, and \epos{} as well as the \rivet{} toolkit, employed for the MC comparisons, are discussed. 
 
-\textcolor{blue}{MC corrections to data??}
+\subsection{Simulation Process} \label{theory:MCEG_simstructure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=.8\linewidth]{Theory/img/MCEG1.png}
-    \caption{Caption}
+    \includegraphics[width=.8\linewidth]{Theory/img/MCEG1.jpg}
+    \caption{Sketch of the structure of the event simulation process as implemented in common MCEG.}
     \label{theory:MCEG}
 \end{figure}
 
-\subsection{Simulation process}
+MCEG aim to implement the theories and models explained in chapter \ref{theory:pp_collisions} into one simulation program that is able to reproduce the observables as measured in experiments. The cross sections as measured by these experiments reflect the probabilistic nature of the processes and mechanisms involved in particle collisions. MCEG use the measured cross sections and probabilities to randomly choose the processes and kinematic properties constituting each simulated event. 
 
-MCEG aim to implement the theories and models explained in chapter \ref{theory:pp_collisions} into one simulation program that is able to reproduce the observables as measured in experiments. The cross sections as measured by these experiments reflect the probabilistic nature of the processes and mechanisms involved in particle collisions. MCEG use the measured cross sections and probabilities to randomly choose the processes and kinematic properties constituting each simulated event. \\
-
-In general MCEG divide the simulation of particle collisions into five phases \cite{MCEG}, as depicted in figure \ref{theory:MCEG}. 
+In general MCEG divide the simulation of particle collisions into phases \cite{MCEG:review, MCEG:lectures}, as depicted in figure \ref{theory:MCEG}. 
 Experiments are mostly interested in measuring events containing (at least) one hard process. It is therefore sensible to start the simulation with a hard elementary scattering between two partons. This so called primary collision is also the hardest, i.e. highest momentum-transfer, parton-parton sub-collision of the event. The elementary process at the heart of this primary collision is chosen randomly according to the cross sections sketched in eq. \ref{eq:cross_section}. \\
-The primary collision is followed by the simulation of the resulting parton shower. Starting from the colour charged products of the primary collision, the cascade of (gluon) Bremsstrahlung is generated according to the probabilities given by the DGLAP splitting functions \cite{DGLAP}, see eq. \ref{eq:DGLAP}. This will also include any initial- and final-state radiation that is produced during the parton-parton collision. The parton shower is terminated once the particles reach the limit of where pQCD is applicable, implemented in a momentum-cutoff parameter. The resulting soft gluons and quarks are formed into hadrons, using one (or both) of the phenomenological hadronisation models mentioned above, cluster or string hadronisation. The hadronisation process will result in bound-state particles that may be unstable, and are decayed into final-state particles at the end of the simulation process. \\
-While the primary hard collision provides the main fraction of produced particles for the majority of the events, the full proton-proton collision consists of additional parton-parton interactions that contribute to the final-state multiplicity. All these additional underlying processes are summarised in the so called underlying event.  
-At the center-of-mass energies reached at the LHC it is very likely to have more than one parton-parton interaction, called multiparton-interactions (MPI), within one pp collision, as can be seen from the cross sections shown in figure \ref{theory:pp_cross_section}. One pp collision usually consists of ?? to ?? MPI \cite{MPIs}.
-Since the PDFs, see figure \ref{theory:PDF}, fall very steeply towards higher momenta, the MPI are expected to be (much) softer than the primary collision. They are, however, assumed to still be within the range of pQCD \cite{MPI_hardness}. The simulation process for each MPI is hence essentially the same as for the primary collision. \\
-As already mentioned for the primary collision, are the particles formed during the hadronisation phase not necessarily stable. After the hadronisation is completed for all parton-parton sub-collisions, the resulting unstable particles will be decayed according to branching ratios acquired from experiment.
-
-The MPI as well as the primary collision are extremely localised inside of the colliding protons. They consequently do not interact with each other, and can be simulated separately from each other. They are, however, not completely independent of each other. Since the initial-state protons are colour-neutral states, and the colour-charge must be conserved throughout the whole event, all particles of the event are colour-connected to each other \cite{color_coherence}. It is therefore possible that there will be colour cross talk between the MPI, and it might be more feasible to simulate all parton-parton subcollisions simultaneously. This effect of colour coherence can influence the multiplicity as well as the momentum distributions of the final-state particles as shown by ?? \cite{color_coherence_results}.  \\
+The primary collision is followed by the simulation of the resulting parton shower. Starting from the colour charged products of the primary collision, the cascade of (gluon) bremsstrahlung is generated according to the probabilities given by the DGLAP splitting functions. This will also include any initial- and final-state radiation that is produced during the parton-parton collision. The parton shower is terminated once the particles reach the limit of where pQCD is applicable, implemented in a momentum-cutoff parameter. The resulting soft gluons and quarks are formed into hadrons, using one (or both) of the phenomenological hadronisation models mentioned above, cluster or string hadronisation. \\
+The underlying event, i.e. additional softer MPI, are simulated in succession to the primary collision, using essentially the same simulation structure. Since the number and momentum scales of MPI are not known apriori, the matter distributions of the colliding hadrons and their spatial overlap have to be modeled. Typically a gaussian matter profile is used. String (cluster) interactions and colour reconnection effects are applied during the hadronisation phase.\\
+The particles resulting from the hadronisation of the MPI may be unstable, and will be decayed at the end of the simulation process according to branching ratios acquired from experiment.
 
 
-\textcolor{blue}{flux tubes??}\\
+\subsection{Pythia 8, Angantyr} 
 
-Figure \ref{theory:MCEG} depicts the primary collision between two partons, the exemplary evolution of the resulting parton shower phase and the subsequent hadronisation in blue. The underlying event processes are depicted in green.\\
+\pythia{8} \cite{Pythia6Manual, Pythia8Intro} is one of the most popular general purpose MCEG for hadron-hadron and lepton-lepton collisions, as it can be used for a variety of applications and features a comprehensive selection of physical processes. The program structure follows in principle the explanations given in section \ref{theory:pp_collisions} and section \ref{theory:MCEG_simstructure}. The simulation starts with the selection of a hard process, subsequently the MPI, inital- and final-state radiation and the involved parton showers are modelled. The hadronisation commences for the whole system at once in order to properly treat colour reconnection effects. The implemented hadronisation model is the Lund string hadronisation. \\
+The current standard set of parameters is compiled in the Monash 2013 Tune \cite{MonashTune}. It includes parameterisations to SPS, Tevatron and early LHC data.
 
+The recent findings of collective effects in proton-proton collisions has lead to the development of a new heavy ion model based on the \pythia{8} implementation of hadron-hadron collisions. The new model, \pythia{Angantyr} \cite{Angantyr}, treats heavy ion collision as direct extrapolations of hadron-hadron dynamics without the formation of a medium or QGP. It is meant to provide information about the non-collective background in heavy ion collisions. \\
+The number of individual nucleon-nucleon sub-collisions is calculated using Glauber calculations \cite{Glauber}. The final-state particle production is calculated from the number of participating or wounded \cite{woundedNucleons} nucleons using the \pythia{8} MPI machinery.
+Currently the possibility for string shoving or rope formation is not included in the \angantyr{} model. It is planned to be included in future models, called \textsc{Gleipnir} \cite{Gleipnir}. This will open the possibility to differentiate collective effects arising from non-thermal origins such as string interactions from thermal effects. 
 
+\subsection{Epos LHC}
 
+\begin{figure}[t!]
+    \centering
+    \begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=.9\textwidth]{Theory/img/Epos_partonladder.jpg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.495\textwidth}
+    \centering
+    \includegraphics[width=.9\textwidth]{Theory/img/Epos_corecorona.jpg}
+    \end{subfigure}
+    \caption{Parton-parton collsision viewed as a parton ladder with corresponding flux tube (left) and schematic view of the space time evolution of particle production in hadron-hadron collisions in EPOS LHC (right). \cite{EPOS_LHC}}
+    \label{theory:EPOS_model}
+\end{figure}
 
-\subsection{PYTHIA} \label{gendiff}
+The \textsc{Epos} \cite{Epos, Epos1.99, Epos2} model aims to describe hadron-hadron, hadron-nucleons as well as nucleus-nucleus collision using a phenomological approach. The individual parton-parton sub-collisions can be expressed as a parton ladder where the parton evolution, i.e. parton shower, from the colliding particles is ordered in $x$. Such a parton ladder can be treated as a relativistic string as in the string model. A sketch of a parton ladder as well as the corresponding colour string is shown in the left side of figure \ref{theory:EPOS_model}. The parton-parton sub-collisions are calculated directly using parton-based Gribov–Regge theory \cite{GRtheory}, no explicit Glauber calculation is used. \\
+In contrast to the \pythia{8} event generator, \textsc{Epos} includes hydrodynamical and collective effects also in hadron-hadron collisions. The phase space of a collision is separated into regions with low string densities (corona) and regions with high string densities (core). The corona evolves in the usual string hadronisation picture without any collective effects. The core region, however, is divided into clusters that will expand collectively and hadronise using a statistical hadronisation model \cite{SHM}. The space time evolution of the core and corona part is depicted in the right side of figure \ref{theory:EPOS_model}.
+The \epos{} model \cite{EPOS_LHC} offers a simplified treatment of the hydrodynamical hadronisation \cite{simpSHM} in comparison to \textsc{Epos} 2 and \textsc{Epos} 3. This significantly reduces the computing time, however, some care has to be taken when studying heavy ion collisions.
 
-\subsection{EPOS LHC}
 
 \subsection{Rivet}
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=.7\textwidth]{Theory/img/rivet_cartoon.jpg}
+    \caption{Sketch of the analysis flow using the \rivet{} toolkit.}
+    \label{theory:rivet_cartoon}
+\end{figure}
+
+To the basic models as explained above many different variations exist, implemented in several MCEG such as \pythia{8}, \epos{}, \textsc{Sherpa}, \textsc{Herwig} and more. In order to compare experimentally obtained results to Monte Carlo predictions, typically the analysis has to be implemented in each of the desired MCEG seperately.
+The \rivet{} toolkit \cite{RivetManual} aims to provide an interface for large scale model comparison and MCEG tuning, i.e. parameterisation of all open model parameters at once. The basic analysis flow using \rivet{} can be seen in figure \ref{theory:rivet_cartoon}. \rivet{} analyses are implemented as plug-ins, allowing them to be compiled and distributed separately from the main \rivet{} functionality. The analyses can then be applied to any MCEG input that is available in the HepMC data format without any additional overhead. The results are provided in the lightweight histogramming system \textsc{Yoda}, and can be converted to \textsc{Root} format by provided means. 
+\rivet{} is already integrated in the analysis chain of several big experiments such as ATLAS or ALICE, and is a crucial tool in improving Monte Carlo models and tunes. In this work \rivet{} version 2.7.2 is used to compare the predictions of the event generators \pythia{8.24} and \epos{} to measurement, and to ensure consistency among all Monte Carlo samples.
 
 \end{document}
