@@ -1,26 +1,69 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-The analysis presented in this thesis focuses on the particle production in proton-proton and proton-lead collisions.
-
-\section{Event and Track properties}
-
-\begin{enumerate}
-    \item[-] event
-    \item[-] multiplicity
-    \item[-] transverse momentum $\rightarrow$ derived quantities?
-    \item[-] sum pt?
-\end{enumerate}
-
-\section{Mean and Variance}
+The particle production in particle collisions is influenced by various aspects as explained in chapter \ref{theory:pp_collisions}. The biggest uncertainties in the current understanding are tied to the MPI and their interaction, as well as the hadronisation phase of the collision. These are closely related to the number of the produced particles and their momenta. The underlying event in particular is sensitive to the MPI and their hadronisation. The selection of underlying event samples from measured data is therefore discussed in section \ref{obs:underlying_event} \\
+Due to the probabilistic nature of elementary processes the results of particle collisions are non-deterministic, i.e. the exact same parton-parton sub-collision -- same momentum transfer and elementary process -- can lead to different particle production. It is therefore useful to study the particle properties in terms of averaged values such as mean and variance, they are discussed in section \ref{obs:mean_var}.
 
 \section{Underlying Event} \label{obs:underlying_event}
+
+In high energy particle collisions, it is expected to find on average two back-to-back particle jets, accompanied by the underlying event, several soft particles filling the region outside of the jet cores, as explained in chapter \ref{theory:MPI}. The particle jets result from the hardest parton-parton sub-collision in the event, while the underlying event results from MPI and from their interactions in particular. \\
+The properties of particle jets have been studied extensively in $e^+e^-$ collider experiments, and their hadronisation can be reproduced well with MCEG.
+In pp collisions, however, the composite nature of the protons give rise to additional mechanisms such as MPI, colour-reconnection and string interactions. In order to study the MPI and especially their hadronisation, the properties of the underlying event are probed. 
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width=.5\textwidth]{Theory/img/regions_wheel.jpg}
-    \caption{Illustration of the towards, transverse and away regions with respect to the leading particle, recreated from \cite{OG_UEMonashPaper}.}
+    \caption{Illustration of the towards, transverse and away regions with respect to the leading particle (red), recreated from \cite{OG_UEMonashPaper}.}
     \label{obs:regions_wheel}
 \end{figure}
+
+In principle the underlying event is defined as all particles not resulting directly from the hard collisions, i.e. all particles not belonging to the jets. In practice it is not possible to identify exactly which hadrons result from the hard collision and which result from MPI. Instead operational definitions are employed that associate the underlying event with the phase space outside of the jet cores. 
+In this thesis a purely geometrical definition is used, as described in \cite{geomUEdefinition}: \\
+The central axis of the (back-to-back) jets is approximated by the direction of the highest $p_\text{T}$ particle, called leading particle. The phase space is then divided into three regions, defined by their azimuthal angle $\Delta\varphi$ with respect to the leading particle as depicted in figure \ref{obs:regions_wheel}. The majority of the jet particles are then contained inside the towards region ($|\Delta\varphi| < 60^\circ$), and the away region ($|\Delta\varphi| > 120^\circ$). The transverse region ($60^\circ \leq |\Delta\varphi| \leq 120^\circ$) hence consists of almost pure underlying event. \\
+The jet located in the towards region is often denoted leading jet, as it contains the higher transverse momenta in comparison to the away-side jet. In contrast to $e^+e^-$ collisions, where the momenta of the colliding particles are fixed at the same value, the momenta of the colliding partons may be very different, leading to a Lorentz-boost in the direction of the leading jet.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\textwidth, clip=true, trim = 14.8cm 0cm 0cm 0cm]{Theory/img/UEplateau.jpg}
+    \caption{Mean inclusive multiplicity in the transverse region as a function of leading particle $p_\text{T}$, here denoted as leading track-jet $p_\text{T}$ \cite{OG_UEMonashPaper}.}
+    \label{obs:plateau}
+\end{figure}
+
+The basic geometrical selection as described above relies on three assumptions in order to get a clean sample of the underlying event: 
+
+\begin{enumerate}
+    \item The hardest sub-collision produces at least one reconstructable jet, i.e. is significantly harder than the underlying event.
+    \item The direction of this jet can be approximated with the leading particle.
+    \item The transverse side is not significantly contaminated with wide angle radiation from the jets.
+\end{enumerate}
+
+Especially the first assumption is only valid in events, where the colliding hadrons (almost) fully overlap. In order to ensure that the transverse region can serve as a sample of the underlying event, a lower threshold on the leading particle $p_\text{T}$ is introduced. Figure \ref{obs:plateau} shows the mean inclusive multiplicity $\langle N_\text{inc.} \rangle$ in the transverse region as a function of the leading particle $p_\text{T}$ as estimated by various MCEG. In the interval up to leading particle $p_\text{T}$ of 10 GeV/c, the mean multiplicity $\langle N_\text{inc.} \rangle$ strongly increases. This is understood to be due to the aforementioned wide angle radiation \cite{OG_UEMonashPaper}. For higher values of the leading particle $p_\text{T}$, the mean multiplicity $\langle N_\text{inc.} \rangle$ is roughly constant. Inside of this plateau, the contributions from the jets are negligible, and the transverse region can be identified with the underlying event. 
+Since the probability for hard parton-parton interactions increases with the overlap of the colliding hadrons, the lower leading particle $p_\text{T}$ threshold corresponds to a bias to bigger overlaps, i.e. smaller impact parameters.
+
+\section{Mean and Variance} \label{obs:mean_var}
+
+The mean as well as the variance are characteristic parameters of a function that quantify the function's shape. The mean of a function or distribution is a measure of the function's most central value. For a discrete distribution $f_i(x_i)$ the mean can be calculated as follows:
+
+\begin{equation}
+    \frac{\sum_i f(x_i)\cdot x_i \cdot w_i}{\sum_i f(x_i) \cdot w_i}
+\end{equation}
+\\
+
+
+
+The transverse momentum, as well as the event multiplicity are both sensitive to the particle production mechanisms. They are closely linked to each other, as higher center-of-mass energies lead to harder $p_\text{T}$ distributions as well as more produced particles. In order to study the correlation between transverse momentum and multiplicity, the transverse momentum distributions are characterized by their mean values or their variance and given as a function of the multiplicity.
+
+In contrast to the multiplicity, the particle $p_\text{T}$ does not depend directly on the number of MPI in the collision. 
+
+Transverse momentum and event multiplicity are sensible variables for studying particle production mechanisms. 
+They are not independent, e.g. one less qqbar produced in hadronisation phase -> "mother" meson has more momentum and generally higher momentum transfers -> more pt and more mult
+
+particle production <-> pt und mult \\
+pt und mult not independent, tied together through hadronisation \\
+analyse dependence, both of them at once through mean pt / var pt vs mult \\
+-> does more mult mean more pt? \\
+mean characterises distribution, average value, what is to be expected on average \\
+distribution can be very broad, mean might not be very meaningful -> variance \\
+variance <-> width of the distribution, mean + variance give good feel of distribution (not unique tho) \\
 
 \end{document}
