@@ -24,7 +24,7 @@ The underlying event, i.e. additional softer MPI, are simulated in succession to
 The particles resulting from the hadronisation of the MPI may be unstable, and will be decayed at the end of the simulation process according to branching ratios acquired from experiment.
 
 
-\subsection{Pythia 8, Angantyr} 
+\subsection{Pythia 8, Angantyr}  \label{theory:pythia}
 
 \pythia{8} \cite{Pythia6Manual, Pythia8Intro} is one of the most popular general purpose MCEG for hadron-hadron and lepton-lepton collisions, as it can be used for a variety of applications and features a comprehensive selection of physical processes. The program structure follows in principle the explanations given in section \ref{theory:pp_collisions} and section \ref{theory:MCEG_simstructure}. The simulation starts with the selection of a hard process, subsequently the MPI, inital- and final-state radiation and the involved parton showers are modelled. The hadronisation commences for the whole system at once in order to properly treat colour reconnection effects. The implemented hadronisation model is the Lund string hadronisation. \\
 The current standard set of parameters is compiled in the Monash 2013 Tune \cite{MonashTune}. It includes parameterisations to SPS, Tevatron and early LHC data.
@@ -33,7 +33,7 @@ The recent findings of collective effects in proton-proton collisions has lead t
 The number of individual nucleon-nucleon sub-collisions is calculated using Glauber calculations \cite{Glauber}. The final-state particle production is calculated from the number of participating or wounded \cite{woundedNucleons} nucleons using the \pythia{8} MPI machinery.
 Currently the possibility for string shoving or rope formation is not included in the \angantyr{} model. It is planned to be included in future models, called \textsc{Gleipnir} \cite{Gleipnir}. This will open the possibility to differentiate collective effects arising from non-thermal origins such as string interactions from thermal effects. 
 
-\subsection{Epos LHC}
+\subsection{Epos LHC} \label{theory:epos}
 
 \begin{figure}[t!]
     \centering

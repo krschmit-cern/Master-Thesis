@@ -1,17 +1,14 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-The underlying event constitutes of all particles and interactions that do not derive directly from the hardest parton-parton collision, also called primary collision. This includes additional parton-parton collisions and their resulting interactions as well as initial and final state radiation. While the primary collision can be described using perturbation theory \cite{perturbation_theory}, the underlying event may consist of soft interactions where pQCD is not applicable. The underlying event is therefore sensitive to the phenomenological models used to describe soft processes and can be utilised to determine their accuracy. \\
-In chapter \ref{Rivet} the comparison of two distinct MCEG PYTHIA 8.24 respectively ANGANTYR and EPOS LHC has shown deviations in the description of particle collisions from measurement. The analysis of transverse momentum and multiplicity spectra in the underlying event region might offer additional insight in the processes responsible for particle production. 
-In the following it is therefore attempted to separate a sample of the underlying event using data from pp collisions at 5.02 TeV center-of-mass-energy. 
+The underlying event constitutes of all particles and interactions that do not derive directly from the hardest parton-parton collision, also called primary collision. This includes additional parton-parton collisions and their resulting interactions as well as initial and final state radiation. The hadronisation of the MPI systems and their interactions can not be derived from first principle and is instead described using phenomenological models. \\
+In chapter \ref{Rivet} the comparison of two distinct MCEG \pythia{8.24} respectively \angantyr{} and \epos{} has shown deviations in the description of particle collisions from measurement. The analysis of transverse momentum and multiplicity distributions of the underlying event might offer additional insight in the processes responsible for particle production. 
+In the following, it is therefore attempted to analyse the transverse momentum and charged-particle multiplicity in three different angular regions as described in chapter \ref{obs:underlying_event}, and use the transverse region as a proxy of the underlying event.
 
 \section{Leading Particle}
 
-In practice it is not known a priori which particles result from the primary collisions and which compose the underlying event. As explained in chapter \ref{theory:leading_track} the direction of the primary jet, resulting from the primary collision, is approximated by the track with the highest transverse momentum, the leading track. The event is then divided into three parts with equal azimuthal coverage, see left part of figure \ref{ue:phi_parts}. The primary jet is then confined within the towards and away regions, so that the transverse region only contains underlying-event particles, see right part of figure \ref{ue:phi_parts}. Note that the towards and away regions may still contain underlying event particles. 
-
-\subsection{Leading Particle \mbox{\textit{p}\textsubscript{T}} Cut}
-
-As already explained in chapter \ref{theory:leading_track} is the approximation only applicable above a certain value of the leading track transverse momentum. Above this threshold the (mean) transverse multiplicity is independent of the leading track and reaches a plateau (underlying event plateau). The underlying event plateau for this analysis can be seen in the left hand side of figure \ref{ue:leading_track}. As can be seen from the figure, the leading track transverse momentum cut is set to be at 4 GeV/\textit{c}. The right hand side of figure \ref{ue:leading_track} depicts the corresponding probability distribution of the leading track transverse momentum. The figure shows that roughly 99\% of the previously ?? events will be lost through the cut. \\
+In practice, it is not known a priori which particles result from the primary collision and which compose the underlying event. As explained in chapter \ref{obs:underlying_event} the direction of the primary jet, resulting from the primary collision, is approximated by the particle with the highest transverse momentum, the leading particle. The event is then divided into three parts with equal azimuthal coverage, see left part of figure \ref{obs:regions_wheel}. It is assumed that the primary jet is confined within the towards and away regions, so that the transverse region only contains underlying-event particles. Note, however, that the towards and away regions may still contain underlying event particles. \\
+This assumption is only valid above a certain value of the leading particle transverse momentum. Above this threshold the (mean) transverse multiplicity is independent of the leading particle and reaches a plateau (underlying event plateau). The underlying event plateau for this analysis can be seen in the left hand side of figure \ref{ue:leading_track}. As can be seen from the figure, the leading track transverse momentum cut is set to be at 4 GeV/\textit{c}. The right hand side of figure \ref{ue:leading_track} depicts the corresponding probability distribution of the leading track transverse momentum. The figure shows that roughly 99\% of the previously 300 million events will be lost through the cut. 
 
 \begin{figure*}[t!]
     \centering
@@ -37,31 +34,18 @@ As already explained in chapter \ref{theory:leading_track} is the approximation 
 		\centering
 		\includegraphics[width=\textwidth]{Analysis/img/ue/leading_particle/DeltaPhiMB.pdf}
 	\end{subfigure}
-    \caption{Probability distribution of angle between any track and the corresponding leading track for events with applied leading track transverse momentum cut (left) and without (right)}
+    \caption{Probability distribution of angle between any particle and the corresponding leading particle for events with applied leading particle transverse momentum cut (left) and without (right)}
     \label{ue:delta_phi}
 \end{figure*}
 
-The leading transverse momentum cut also introduces a bias in the towards and possibly the away region to the data. Figure \ref{ue:delta_phi} shows the probability distribution of the angle between an arbitrary track and the leading track ($\angle = \phi_{lead} - \phi_{track}$) with (left) and without (right) leading transverse momentum cut. ?? \textcolor{blue}{Waves in lhs ??} The towards side is always the region containing the highest transverse momentum particle, it is therefore expected that the number of produced particles in this region is enhanced, compared to the other two regions. This is confirmed by the rhs of figure \ref{ue:delta_phi}. Since momentum must be conserved in each event and each interaction respectively it is also expected that the particle production in the away region is also slightly enhanced, compared to the transverse region. With introducing the leading transverse momentum cut the probability of finding a particle in the towards region is enhanced by roughly ?10\%? compared to the distribution without cut. The probability distribution in the away region is also considerably enhanced. \\
-In the following all results will be shown with as well as without the leading transverse momentum cut applied, so that the effects of the cut are visible.
+The leading transverse momentum cut also introduces a bias in the towards, and due to the back-to-back jets possibly in the away region to the data. Figure \ref{ue:delta_phi} shows the probability distribution of the angle between an arbitrary particle and the leading particle ($\Delta\varphi = \varphi_\text{lead} - \varphi_\text{particle})$ with (left) and without (right) leading transverse momentum cut. The wavelike structure superimposed in the distribution with leading \textit{p}\textsubscript{T} cut is caused by ??????, see appendix \ref{app:waves}. \\
+The towards side is always the region containing the highest transverse momentum particle, it is therefore expected that the number of produced particles in this region is enhanced, compared to the other two regions. This is confirmed by the right side of figure \ref{ue:delta_phi}. It can be seen that with introducing the leading transverse momentum cut the probability of finding a particle in the towards region is enhanced by roughly 30\% compared to the distribution without cut. Since momentum must be conserved in each event and each interaction respectively it is also expected that the particle production in the away region is also slightly enhanced, compared to the transverse region, as is confirmed by figure \ref{ue:delta_phi} as well.\\
+In the following all results will be shown with as well as without the leading transverse momentum cut applied, so that the effects of the cut are visible. Note, however, that in the case where no leading $p_\text{T}$ cut is applied, the transverse region is contaminated with wide angle radiation of the leading jet, and can not be identified as pure underlying event.
 
-\section{Event-by-event particle production}
+\section{Multiplicity}
 
-    \subsection{Multiplicity}
     
 \begin{figure}
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/mult.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/multMB.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{ue:multiplicity}
-    \vspace*{\floatsep}
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -72,11 +56,25 @@ In the following all results will be shown with as well as without the leading t
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/RTMB.pdf}
 	\end{subfigure}
-    \caption{}
-    \label{ue:multiplicity_normalized}
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/multRatio.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/multRatioMB.pdf}
+	\end{subfigure}
+    \caption{Multiplicity distributions (top row) in the corresponding azimuthal regions for events with leading particle $p_\text{T}$ cut applied (left) and without (right), as well as the corresponding ratios to \textit{all regions} and \textit{Minimum Bias} respectively (bottom row). All distributions have been scaled to their corresponding azimuthal range. The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
+    \label{ue:mult_ratio}
+    
 \end{figure}
 
-\begin{figure}
+The upper panels of figure \ref{ue:mult_ratio} shows the corresponding charged-particle multiplicity distributions for each of the three regions as well as all of them combined (all regions) for events with as well as without leading particle \pt{} cut. All distributions have been scaled to their corresponding azimuthal coverage, the unscaled distributions can be found in appendix \ref{app:unscaled}. The lower panels of figure \ref{ue:mult_ratio} show the corresponding ratios to \textit{all regions} and \textit{Minimum Bias} respectively. In the case where no leading \pt{} cut has been applied, the shape of the regions are very similar, as can be seen from the ratios. The corresponding mean and variance as well as the position and value of the maxima are shown in figure \ref{ue:mult_moments}. It can be seen that higher multiplicities in the towards and away side are slightly enhanced in comparison to the transverse side. \\
+In contrast, the distributions obtained from events where the leading \pt{} cut has been applied show clearly distinct maxima and mean values, as can be seen from figure \ref{ue:mult_ratio}. The towards region is strongly enhanced in comparison to the away and the transverse region. The variance and therefore the width of the distributions are, however quite similar in the three regions. This indicates that the underlying event fills up the whole angular range of the event, and the hard collision contributes additional particles in the towards and the away region, as assumed above. Additionally it can be concluded that the leading jet contributes a large fraction to the total multiplicity, otherwise the hard collision would be negligible in comparison to the total multiplicity. \\
+The $N_\text{ch}$ distributions of events selected with the leading particle \pt{} cut are generally shifted to higher multiplicities in comparison to the corresponding distributions without cut. This is a consequence of the impact parameter dependence as explained above. The leading \pt{} cut biases the event to smaller impact parameters, i.e. bigger overlap of the colliding hadrons. This results in higher probabilities for hard interactions as well as for more MPI in one event, both leading to enhanced particle production. 
+
+\begin{figure}     
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -87,146 +85,35 @@ In the following all results will be shown with as well as without the leading t
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/multmax.pdf}
 	\end{subfigure}
-    \caption{}
+    \caption{Mean  and  Variance  (left)  as  well  as  position  and  value  of  maximum(right) of charged-particle multiplicity measured in the towards, away and transverse region as well as \textit{all regions} combined. }
     \label{ue:mult_moments}
 \end{figure}
 
-\clearpage
+In order to approximate the contribution of the leading jet to the total event multiplicity, in the following the fraction of particles measured in one of the  regions is considered as a function of the total event multiplicity. For this purpose the average fraction Z of any observable measured in a specific region to the event total is defined as follows:
 
-    \subsection{Sum $p_T$}
-    
-    \begin{figure}
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/sumPTproj.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/sumPTprojMB.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{ue:sum_pt}
-\end{figure}
+\begin{equation}
+    Z(x; y_\text{total}) = \frac{[\text{mean} (x_\text{region})]_{y_\text{total}}}{x_\text{total}}  \label{eq:ZED}
+\end{equation}
 
-\clearpage
+The parameter $y_\text{total}$ denotes a condition on the events considered in the calculation, e.g. that the total number of charged particles in the event has to be equal to $x_\text{total}$.
+The fraction of $N$ measured in e.g. the towards region to the total measured multiplicity as function of the total multiplicity is then given by:
 
-\section{Correlations between regions??}
+\begin{equation}
+    Z(N_\text{ch}; x_\text{total}) = \frac{[\text{mean} (N_\text{region})]_{ x_\text{total}}}{x_\text{total}}  
+\end{equation}
 
-\begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCorr_toward.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCorrMB_toward.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCorr_transverse.pdf}
-	\end{subfigure}
-    \hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCorrMB_transverse.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCorr_away.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCorrMB_away.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{mult_corr}
-\end{figure*}
-
-
-\begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumPT_toward.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumPTMB_toward.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumPT_transverse.pdf}
-	\end{subfigure}
-    \hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumPTMB_transverse.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumPT_away.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumPTMB_away.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{ue:sumPT_corr}
-\end{figure*}
-
-\begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCompPercent.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multCompPercentMB.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{ue:multComp_percent}
-    \vspace*{\floatsep}
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumCompPercent.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumCompPercentMB.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{ue:sumPtComp_percent}
-    \vspace*{\floatsep}
+\begin{figure}
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/multComp_all.pdf}
 	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumComp_all.pdf}
-	\end{subfigure}
-    \caption{}
-    \label{ue:comp_all}
-\end{figure*}
+    \caption{Fraction of the measured raw multiplicity $N_\text{acc}$ in each region as function of the total $N_\text{acc}$, with and without the leading \pt{} cut applied respectively.}
+    \label{ue:mult_percent}
+\end{figure}
 
-\clearpage
+The corresponding fractions Z of the measured raw multiplicity $N_\text{acc}$, i.e. not unfolded with the procedure as described in \ref{dataset:unfolding}, for the four azimuthal regions with and without leading \pt{} cut respectively can be seen in figure \ref{ue:mult_percent}. Both of the event samples show a similar trend. At small total $N_\text{acc}$, where there is very little or no underlying event, the towards region strongly predominates. Towards higher $N_\text{acc}$, where the MPI start contributing to the multiplicity, the fractions get closer to each other until they are roughly equal within their statistical uncertainties at a value of 33\%. At this point the contribution of the hard collision becomes negligible in comparison to the total multiplicity and all of the regions contribute roughly evenly. In the event sample where the leading \pt{} cut is applied, the towards and away region are slightly enhanced in comparison to the distributions without the cut applied, especially at low $N_\text{acc}$. \\
+The fraction of particles produced by the hard collision can be approximated from the distributions with leading \pt{} cut applied. At intermediate $N_\text{acc}$, where the transverse region contains approximately 30\% of all particles, the hard collision contributes roughly 10\% to the total multiplicity, assuming that the underlying event is evenly distributed in all of the regions. 
 
 \section{Transverse momentum spectra}
 
@@ -242,10 +129,26 @@ In the following all results will be shown with as well as without the leading t
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/pTMB.pdf}
 	\end{subfigure}
-    \caption{}
+    % \vspace*{\floatsep}
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/pTRatio.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/pTRatioMB.pdf}
+	\end{subfigure}
+    \caption{Transverse momentum distributions (top row) in the corresponding azimuthal regions for events with (left) and without (right) leading $p_\text{T}$ cut applied, as well as the corresponding ratios to \textit{all regions} and \textit{Minimum Bias} respectively (bottom row). All distributions have been scaled to their corresponding azimuthal range. The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
     \label{ue:pt}
 \end{figure*}
 
+Figure \ref{ue:pt} shows the \pt{} distributions of the different azimuthal regions for event samples with as well as without leading \pt{} cut applied in the upper panels, and the corresponding ratios to \textit{all regions} and \textit{Min. Bias} in the lower panels. The distributions have been scaled to the corresponding azimuthal ranges. In the distributions without the leading \pt{} cut applied, the towards side is clearly enhanced at higher transverse momenta in comparison to the other regions as expected. The away and the transverse side, however overlap up to $p_\text{T} \approx 1$, for higher \pt{} the distributions separate and the away side is enhanced at high \pt{} in comparison to the transverse side. Since the multiplicity distributions, see figure \ref{ue:mult_ratio}, have roughly the same shape with the towards side being slightly enhanced it can be discerned that the enhancement of the towards and away side at high \pt{} is due to the contributions of the hard collision. In the distributions for which the leading \pt{} cut has been applied this effect is clearly visible. The towards, away and transverse side overlap for small \pt{}, meaning that the soft particles are distributed evenly throughout the azimuthal range. This supports the assumption that the leading jet (pair) superimposes on an evenly distributed underlying event. The steps occurring at $p_\text{} = 4$ in the towards as well as the \textit{all regions} distributions is due to the leading particle \pt{} cut that enforces an enhancement of the higher \pt{} values. From the enhancement of the away region however, it can be discerned that the primary collision contributes mostly hard particles to the final state of the event.
+
+\subsection{Mean and Variance as function of multiplicity}
+
+As mentioned above, the transverse momentum and the multiplicity of an event are closely tied together by the hadronisation processes. In the following the correlation between the two will be examined by studying the mean as well as the variance of the transverse momentum distributions as a function of the charged particle multiplicity. 
 
 \begin{figure*}[t!]
     \centering
@@ -258,10 +161,27 @@ In the following all results will be shown with as well as without the leading t
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/meanMB.pdf}
 	\end{subfigure}
-    \caption{}
+    % \vspace*{\floatsep}
+        \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/meanRatio.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/meanRatioMB.pdf}
+	\end{subfigure}
+    \caption{mean $p_\text{T}$ as function of $N_\text{acc}$ (top  row) in the corresponding azimuthal regions for events with (left) and without (right) leading \pt{} cut applied, as well as the corresponding ratios to \textit{all regions} and \textit{Minimum Bias} respectively (bottom row). All distributions have been scaled to their corresponding azimuthal range.  The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
     \label{ue:mean}
-    \vspace*{\floatsep}
-    \centering
+\end{figure*}
+
+
+
+
+
+\begin{figure}
+        \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/var.pdf}
@@ -273,7 +193,49 @@ In the following all results will be shown with as well as without the leading t
 	\end{subfigure}
     \caption{}
     \label{ue:var}
+\end{figure}
+
+
+\clearpage
+
+    \section{Summed $p_T$}
+    
+    \begin{figure}
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/pTsummed.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/pTsummedMB.pdf}
+	\end{subfigure}
+    \caption{}
+    \label{ue:sum_pt}
+\end{figure}
+
+
+
+\begin{figure*}[t!]
+
+    \vspace*{\floatsep}
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumComp_all.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/correlations/sumMultComp_all.pdf}
+	\end{subfigure}
+    \caption{}
+    \label{ue:sumPtComp_percent}
 \end{figure*}
+
+\clearpage
+
 
 
 \end{document}

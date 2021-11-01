@@ -12,10 +12,13 @@
 \usepackage{titlesec}
 
 \usepackage{parskip}
+\usepackage[nottoc,numbib]{tocbibind}
 
 \usepackage[english]{babel}
-\usepackage{textgreek}
+% \usepackage{textgreek}
+\usepackage{hyphenat}
 
+\hyphenation{Py-th-ia py-th-ia}
 
 \usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm,bindingoffset=1cm]{geometry}
 \usepackage{fancyhdr}
@@ -36,6 +39,8 @@
 \newcommand{\pythia}[1]{\textsc{Pythia #1}}
 \newcommand{\epos}{\textsc{Epos Lhc}}
 \newcommand{\angantyr}{\textsc{Angantyr}}
+\newcommand{\pt}{\textit{p}\textsubscript{T}}
+\newcommand{\mult}{\textit{N}\textsubscript{ch}}
 
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
@@ -43,7 +48,7 @@
 \titlespacing*{\subsection}{0pt}{3.5ex plus 1ex minus .2ex}{2.5ex plus .2ex}
 %\titlespacing*{\subsubsection}{0pt}{3.5ex plus 1ex minus .2ex}{2.5ex plus .2ex}
 
-\linenumbers
+% \linenumbers
 
 
 \title{Thesis}
@@ -83,7 +88,7 @@
 \subfile{Analysis/dataset.tex}
 \clearpage
 
-\chapter{Monte-Carlo-Model Comparison}
+\chapter{Monte-Carlo-Model Comparison} \label{Rivet}
 \subfile{Analysis/rivet.tex}
 \clearpage
 
@@ -99,5 +104,6 @@
 \bibliography{references}
 
 \appendix
+\subfile{appendix.tex}
 
 \end{document}

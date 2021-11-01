@@ -2,13 +2,13 @@
 
 \begin{document}
 
-The particles resulting from pp as well as p--Pb collisions are produced through complex composition and interplay of different mechanisms. Monte Carlo event generators (MCEG) model these mechanisms and serve to fully simulate particle collisions, cf. chapter \ref{mceg}. In order to test the particle production mechanisms modelled in MCEG, the observables calculated from the kinematic properties of the resulting final-state particles are compared to measurement. \\
+The particles resulting from pp as well as p--Pb collisions are produced through the complex interplay of different mechanisms. Monte Carlo event generators (MCEG) model these mechanisms as explained in chapter \ref{theory:MCEG_simstructure}, and serve to fully simulate particle collisions. In order to test the particle production mechanisms modelled in MCEG, the observables calculated from the kinematic properties of the resulting final-state particles are compared to measurements. \\
 Charged-particle multiplicity and transverse momentum distributions are closely linked to particle production and hence are sensitive observables to test MCEG. \\
-In the following the models for particle production incorporated in the PYTHIA 8.24, PYTHIA Angantyr and EPOS LHC event generators will be tested for pp and p--Pb collisisons for the center-of-mass energies 2.76, 5.02, 7 and 13 TeV as well as 5.02 and 8.16 TeV respectively. 
+In the following, the models for particle production incorporated in the \pythia{8.24}, \pythia{Angantyr} and \epos{} event generators will be tested for pp and p--Pb collisisons for the center-of-mass energies 2.76, 5.02, 7 and 13 TeV as well as 5.02 and 8.16 TeV respectively. 
 
 \section{pp Collisions}
 
-The charged-particle multiplicities and transverse-momentum spectra resulting from pp collisions simulated with PYTHIA 8.24 and EPOS LHC will be compared to measurement of the center-of-mass energies of 2.76, 5.02, 7 and 13 TeV. 
+The charged-particle multiplicities and transverse-momentum spectra resulting from pp collisions simulated with \pythia{8.24} and \epos{} are compared to measurements of the center-of-mass energies of 2.76, 5.02, 7 and 13 TeV in the following. 
 
 \subsection{Charged-Particle Multiplicity}
 
@@ -23,7 +23,7 @@ The charged-particle multiplicities and transverse-momentum spectra resulting fr
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_mult_energies_EPOS.pdf}
 	\end{subfigure}
-    \caption{Charged-particle multiplicity distributions arising from PYTHIA 8.24 (left) and EPOS LHC (right) simulations each in comparison to measurement.}
+    \caption{Charged-particle multiplicity distributions arising from \pythia{8.24} (left) and \epos{} (right) simulations each in comparison to measurement.}
     \label{rivet:mult_pp}
 %\end{figure*}
     \vspace*{\floatsep}
@@ -38,22 +38,20 @@ The charged-particle multiplicities and transverse-momentum spectra resulting fr
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/multmax_vs_energies_pp.pdf}
 	\end{subfigure}
-    \caption{Mean and Variance (left) as well as position and value of maximum (right) of charged-particle multiplicity from measurement, PYTHIA 8.24 and EPOS LHC in dependence of center-of-mass energy}
+    \caption{Mean and Variance (left) as well as position and value of maximum (right) of charged-particle multiplicity from measurement, \pythia{8.24} and \epos{} in dependence of center-of-mass energy}
     \label{rivet:fixpoints_pp}
 \end{figure*}
 
-The primary charged-particle multiplicity results directly from the hadronisation phase of particle collisions. It is therefore sensitive to changes in the modeling of the hadronisation. The event generators PYTHIA 8.24 and EPOS LHC differ in the implemented hadronisation models, as explained in chapter \ref{gendiff}. While PYTHIA 8.24 utilizes string hadronisation in the full phase space, EPOS LHC applies this only in regions of low string densities. Regions of high string densities are hadronised using cluster hadronisation.\\
+The primary charged-particle multiplicity results directly from the hadronisation phase of particle collisions. It is therefore sensitive to changes in the modeling of the hadronisation and the MPI. The event generators \pythia{8.24} and \epos{} differ in the implemented hadronisation models, as explained in chapter \ref{theory:pythia} and \ref{theory:epos} respectively. While \pythia{8.24} utilizes string hadronisation in the full phase space, \epos{} applies this only in regions of low string densities. Regions of high string densities are hadronised using a statistical hadronisation approach.
 
-\noindent
-Figure \ref{rivet:mult_pp} shows the charged-particle multiplicity distributions simulated with PYTHIA 8.24 (left) and EPOS LHC (right) respectively, in comparison to the unfolded measurement. Figure \ref{rivet:fixpoints_pp} shows the mean and variance (left) as well as the position and the value of the maximum (right) of these multiplicity distributions as function of the center-of-mass energy. Both event generators are in agreement with the measurement within 30\%. 
+Figure \ref{rivet:mult_pp} shows the charged-particle multiplicity distributions simulated with \pythia{8.24} (left) and \epos{} (right) respectively in comparison to the unfolded measurement. Figure \ref{rivet:fixpoints_pp} shows the mean and variance (left) as well as the position and the value of the maximum (right) of these multiplicity distributions as function of the center-of-mass energy. Both event generators are in agreement with the measurement within 30\%. 
 They reproduce the mean (variance) of the distributions within 2\% (10\%), especially the increase with rising center-of-mass energy is reproduced quite well by both MCEG. 
-The position of the maximum at \mbox{\textit{N}\textsubscript{ch} $=$ 2} in EPOS LHC data is in agreement with measurement, while it is shifted to {\textcolor{blue}{\mbox{\textit{N}\textsubscript{ch} $=$ 3} in PYTHIA 8.24 data}}\footnote{3 charged particles: $++$ $+$ $-$ or $++$ $--$ $++$ are possible charges, hence at least one baryon is produced. Impact on cross section?}. 
+The position of the maximum at \mbox{\textit{N}\textsubscript{ch} $=$ 2} in \epos{} data is in agreement with measurement, while it is shifted to \mbox{\textit{N}\textsubscript{ch} $=$ 3} in \pythia{8.24} data.
 The value of the maximum, however, is in agreement with the measurement within 10\% for both event generators. The ratios between simulated and measured distributions suggest that both MCEG overestimate the downward gradient from the position of the mean up to multiplicities of about 27. 
-The ratios between the PYTHIA 8.24 data and measurement is almost completely overlapping for all center-of-mass energies. This indicates that the evolution of the spectra with increasing energy is represented quite well. Whereas the ratios between the EPOS LHC data and measurement do not overlap between multiplicities 10 and 27. This suggests that the energy dependence of the distributions is not represented as well in EPOS LHC as in PYTHIA 8.24. Since the multiplicity at center-of-mass energy of 2.76 TeV arising from EPOS LHC is in agreement with measurement within 5\% up to multiplicity 35, it can be concluded that charged-particle multiplicity might be modelled well at lower center-of-mass energies, but is not properly propagated to higher center-of-mass energies. 
+The ratios between the \pythia{8.24} data and measurement is almost completely overlapping for all center-of-mass energies. This indicates that the evolution of the spectra with increasing energy is represented quite well. Whereas the ratios between the \epos{} data and measurement do not overlap between multiplicities 10 and 27. This suggests that the energy dependence of the distributions is not represented as well in \epos{} as in \pythia{8.24}. Since the multiplicity at center-of-mass energy of 2.76 TeV arising from \epos{} is in agreement with measurement within 5\% up to multiplicity 35, it can be concluded that charged-particle multiplicity might be modelled well at lower center-of-mass energies, but is not properly propagated to higher center-of-mass energies. Since both \pythia{8.24} and \epos{} are tuned to early LHC data and relatively low center-of-mass energies, the energy dependence arises mostly from the implemented models. The \pythia{8.24} hadronisation model therefore seems to represent the energy dependence better.
 
-%\clearpage
 
-\subsection{\textcolor{blue}{Transverse Momentum}}
+\subsection{{Transverse Momentum}}
 
 \begin{figure*}[t]
     \centering
@@ -66,18 +64,18 @@ The ratios between the PYTHIA 8.24 data and measurement is almost completely ove
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_pT_energies_EPOS.pdf}
 	\end{subfigure}
-    \caption{Transverse momentum distributions of charged particles from PYTHIA 8.24 (left) and EPOS LHC (right) in comparison to measurement}
+    \caption{Transverse momentum distributions of charged particles from \pythia{8.24} (left) and \epos{} (right) in comparison to measurement}
     \label{rivet:pT_pp}
 \end{figure*}
 
-In contrast to the charged-particle multiplicity, the transverse momentum of the final-state particles is closely linked to the parton shower. The parton shower consists of a cascade of emitted gluons, quarks, photons and electrons originating from the primary elemental collision. Each of the emitted partons carries a fraction of the momentum of its mother particle. The position of the partons at the beginning of the hadronisation phase and their momentum strongly influences the momentum of the final-state particles.\\
+The charged-particle multiplicity is closely linked to the transverse momentum of the final-state particles. In the string hadronisation model shorter strings lead to less particles with more momentum, and vice versa. This is especially relevant to the interaction of different MPI and the colour reconnection mechanism. The transverse momentum and it's mean and variance as function of $N_\text{ch}$ are therefore studied in the following.
 
 \begin{table}[t]
     \centering
     \begin{tabular}{r|c|c|c}
           & \multicolumn{3}{c}{average number of particles} \\
         \hline
-        cm energy & PYTHIA 8.24 & EPOS LHC & measurement \\
+        cm energy & \pythia{8.24} & \epos{} & measurement \\
         \hline
         2.76 TeV & 7.1 & 7.3 & 6.9 \\
         \hline
@@ -87,16 +85,16 @@ In contrast to the charged-particle multiplicity, the transverse momentum of the
         \hline
         13 TeV & 10.4 & 10.3 & 9.3 \\
     \end{tabular}
-    \caption{Average number of particles produced by PYTHIA 8.24 and EPOS LHC respectively measured in experiment, calculated from transverse-momentum spectra (see figure \ref{rivet:pT_pp}). Note that the values for both MCEG are identical to the mean multiplicities shown in figure \ref{rivet:fixpoints_pp}, as expected. The deviation between the two calculations in measurement is most likely due to the unfolding process.}
+    \caption{Average number of particles produced by \pythia{8.24} and \epos{} as well as measured in experiment, calculated from transverse-momentum spectra (see figure \ref{rivet:pT_pp}). Note, that the values for both MCEG are identical to the mean multiplicities shown in figure \ref{rivet:fixpoints_pp}. The deviation between the two calculations in measurement is most likely due to the unfolding process sketched in chapter \ref{dataset:unfolding}}
     \label{rivet:tab:mean_nTracks_pp}
 \end{table}
 
-Figure \ref{rivet:pT_pp} shows the transverse-momentum distributions of charged particles from PYTHIA 8.24 (left) and EPOS LHC (right) in comparison to measurement. 
-The distributions from both MCEG follow a similar shape. While PYTHIA 8.24 underestimates the probability of particles carrying transverse momenta below \mbox{\textit{p}\textsubscript{T} $=$ 0.25 GeV/\textit{c}}, EPOS LHC slightly overestimates the measurement in this \textit{p}\textsubscript{T} interval. Both PYTHIA 8.24 and EPOS LHC then overestimate the probability distribution up to \mbox{\textit{p}\textsubscript{T} $=$ 1 GeV/\textit{c}}. For values \mbox{\textit{p}\textsubscript{T} $\geq$ 1 GeV/\textit{c}} the probability is underestimated for center-of-mass energies 2.76 and 5.02 TeV and overestimated for 7 and 13 TeV. The ratios of the simulated distributions to the measured data show that the maximum of the simulated distributions is shifted to slightly higher transverse momenta in comparison to the measurement. The downward gradient for values of \mbox{\textit{p}\textsubscript{T} $<$ 1 GeV/\textit{c}} is, however, steeper in the MCEG data than suggested by the measurement. This trend is continued towards higher transverse momenta in data measured respectively simulated at center-of-mass energies of 2.76 and 5.02 TeV, such that above \mbox{\textit{p}\textsubscript{T} $=$ 1 GeV/\textit{c}} the probability distributions are underestimated. This suggests that the transverse-momentum spectra are estimated too soft by both MCEG.  
-Table \ref{rivet:tab:mean_nTracks_pp} shows the average number of particles produced in one event calculated from the transverse-momentum distributions shown in figure \ref{rivet:pT_pp} for PYTHIA 8.24, EPOS LHC as well as measurement. It can be regarded that both PYTHIA 8.24 and EPOS LHC events contain on average more particles than measured in experiment. Meaning that rather than the total transverse momentum being distributed incorrectly to the produced partons respectively hadrons, it is distributed to too many particles, resulting in the spectra being too soft.
-This could be the consequence of the transverse-momentum cutoff, indicating the termination of the parton shower and the start of the hadronisation phase, being set at a slightly too low value. This would lead to more parton splittings than desired and hence to more particles with less transverse momentum.\\
-For data measured at center-of-mass energies of 7 and 13 TeV the ratios of figure \ref{rivet:pT_pp} show an inflexion point at roughly \mbox{\textit{p}\textsubscript{T} $\approx$ 1 GeV/\textit{c}}. For \mbox{\textit{p}\textsubscript{T} $>$ 1 GeV/\textit{c}} the downward gradient changes slope resulting in the PYTHIA 8.24 and EPOS LHC data overestimating the measurement over the full transverse-momentum range. This change in slope of the simulated transverse-momentum distributions suggests that above \mbox{\textit{p}\textsubscript{T} $\approx$ 1 GeV/\textit{c}} \textcolor{blue}{other processes} cause an increase in the probability distributions in addition to the one described above.\footnote{I currently have no idea what those could be..} 
-The energy dependence is reproduced about equally well in both event generators. \\
+Figure \ref{rivet:pT_pp} shows the transverse-momentum distributions of charged particles from \pythia{8.24} (left) and \epos{} (right) in comparison to measurements at different center-of-mass energies. 
+The distributions from both MCEG follow a similar shape. While \pythia{8.24} underestimates the probability of particles carrying transverse momenta below \mbox{\textit{p}\textsubscript{T} $=$ 0.25 GeV/\textit{c}}, \epos{} slightly overestimates the measurement in this \textit{p}\textsubscript{T} interval. Both \pythia{8.24} and \epos{} then overestimate the probability distribution up to \mbox{\textit{p}\textsubscript{T} $=$ 1 GeV/\textit{c}}. For values \mbox{\textit{p}\textsubscript{T} $\geq$ 1 GeV/\textit{c}}, the probability is underestimated for center-of-mass energies 2.76 and 5.02 TeV and overestimated for 7 and 13 TeV. The ratios of the simulated distributions to the measured data show that the maximum of the simulated distributions is shifted to slightly higher transverse momenta in comparison to the measurements. The downward gradient for values of \mbox{\textit{p}\textsubscript{T} $<$ 1 GeV/\textit{c}} is, however, steeper in the MCEG data than suggested by the measurement. This trend continues towards higher transverse momenta in the simulated data at center-of-mass energies of 2.76 and 5.02 TeV, such that above \mbox{\textit{p}\textsubscript{T} $=$ 1 GeV/\textit{c}}, the probability distributions are underestimated. This suggests that the transverse-momentum spectra are estimated too soft by both MCEG.  
+Table \ref{rivet:tab:mean_nTracks_pp} shows the average number of particles produced in one event calculated from the transverse-momentum distributions shown in figure \ref{rivet:pT_pp} for \pythia{8.24}, \epos{} as well as measurement. It can be regarded that both \pythia{8.24} and \epos{} events contain on average more particles than measured in experiment. Meaning that rather than the total transverse momentum being distributed incorrectly to the produced partons respectively hadrons, it is distributed to too many particles, resulting in the spectra being too soft.
+This could be the consequence of too little colour reconnection between the MPI. A higher probability for colour reconnection to occur between the MPI would lead to smaller strings, resulting in harder spectra with less particles.\\
+For data measured at center-of-mass energies of 7 and 13 TeV, the ratios of figure \ref{rivet:pT_pp} show an inflexion point at roughly \mbox{\textit{p}\textsubscript{T} $\approx$ 1 GeV/\textit{c}}. For \mbox{\textit{p}\textsubscript{T} $>$ 1 GeV/\textit{c}} the downward gradient changes slope resulting in the \pythia{8.24} and \epos{} data overestimating the measurement over the full transverse-momentum range. This change in slope of the simulated transverse-momentum distributions suggests that above \mbox{\textit{p}\textsubscript{T} $\approx$ 1 GeV/\textit{c}} the particles resulting from the primary hard collision dominate the distributions.
+The energy dependence is reproduced about equally well in both event generators. 
 
 \begin{figure*}[t!] 
     \centering
@@ -109,7 +107,7 @@ The energy dependence is reproduced about equally well in both event generators.
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_mean_energies_EPOS.pdf}
 	\end{subfigure}
-    \caption{Mean transverse momentum as function of multiplicity calculated from PYTHIA 8.24 (left) and EPOS LHC (right) in comparison to measurement.}
+    \caption{Mean transverse momentum as function of multiplicity calculated from \pythia{8.24} (left) and \epos{} (right) in comparison to measurement.}
     \label{rivet:mean_pp}
 %\end{figure*}
     \vspace*{\floatsep}
@@ -124,51 +122,26 @@ The energy dependence is reproduced about equally well in both event generators.
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_variance_energies_EPOS.pdf}
 	\end{subfigure}
-    \caption{Variance of transverse momentum as function of multiplicity calculated from PYTHIA 8.24 (left) and EPOS LHC (right) in comparison to measurement.}
+    \caption{Variance of transverse momentum as function of multiplicity calculated from \pythia{8.24} (left) and \epos{} (right) in comparison to measurement.}
     \label{rivet:var_pp}
 \end{figure*}
 
-The multiplicity-integrated transverse-momentum distribution is indirectly influenced by the shape of the multiplicity distribution. In order to evaluate the transverse momentum spectra independently of these shapes, their mean and variance are calculated as function of charged-multiplicity, as shown in figure \ref{rivet:mean_pp} and \ref{rivet:var_pp} respectively for PYTHIA 8.24 (left) and EPOS LHC (right) in comparison to measurement. Both event generators are in agreement with measurement within 5\% for the mean and within 10\% for the variance of the transverse-momentum spectra. 
-Both PYTHIA 8.24 and EPOS LHC underestimate the mean for multiplicities smaller than ten. PYTHIA 8.24 starts overestimating the mean transverse momentum above \mbox{\textit{N}\textsubscript{ch} $=$ 10}, while EPOS LHC approaches the measurement up to a multiplicity  of \textit{N}\textsubscript{ch} $=$ 20 and is then in agreement with measurement within 2\%. This suggests that the composition of string and cluster fragmentation works well for events with multiplicities above 20, while it does not work as well for lower multiplicities. Since PYTHIA 8.24 is in agreement within 1\% at center-of-mass energy 2.76 TeV in the interval \mbox{10 $\leq$ \textit{N}\textsubscript{ch} $<$ 25}, the mean transverse momentum might be reproduced well for smaller center-of-mass energies but not translated well to higher center-of-mass energies.  \\
-In contrast to the multiplicity distributions, the energy dependence of the mean transverse momentum is slightly better described in EPOS LHC. \\
-The variance of the transverse momentum distributions is underestimated in both event generators and the energy dependence is reproduced equally well. \\
+The transverse-momentum and the event multiplicity are closely linked to each other through the hadronisation processes. In order to study these correlations, the mean and variance of the transverse momentum distributions are calculated in the interval $0.15 < p_\text{T}\ (\text{GeV}/c) < 10$ as function of charged-particle multiplicity, as shown in figure \ref{rivet:mean_pp} and \ref{rivet:var_pp} respectively for \pythia{8.24} (left) and \epos{} (right) in comparison to measurements. Both event generators are in agreement with measurement within 5\% for the mean and within 10\% for the variance of the transverse-momentum spectra. 
+Both \pythia{8.24} and \epos{} underestimate the mean for multiplicities smaller than ten. \pythia{8.24} starts overestimating the mean transverse momentum above \mbox{\textit{N}\textsubscript{ch} $=$ 10}, while \epos{} approaches the measurement up to a multiplicity  of \textit{N}\textsubscript{ch} $=$ 20 and is then in agreement with measurement within 2\%. This suggests that the composition of string and cluster fragmentation works well for events with multiplicities above 20, while it does not work as well for lower multiplicities. Since \pythia{8.24} is in agreement within 1\% at center-of-mass energy 2.76 TeV in the interval \mbox{10 $\leq$ \textit{N}\textsubscript{ch} $<$ 25}, the mean transverse momentum might be reproduced well for smaller center-of-mass energies but not translated well to higher center-of-mass energies.  \\
+In contrast to the multiplicity distributions, the energy dependence of the mean transverse momentum is slightly better described in \epos{}. \\
+The variance of the transverse momentum distributions is underestimated in both event generators and the energy dependence is reproduced equally well. 
 
-\begin{figure*}[t]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_pTE_energies_PYTHIA.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_pTE_energies_EPOS.pdf}
-	\end{subfigure}
-    \caption{Transverse momentum distributions normalised to the shape of the multiplicity distributions (cf. chapter \ref{pTE}) calculated from PYTHIA 8.24 (left) and EPOS LHC (right) in comparison to measurement}
-    \label{rivet:pTE_pp}
-\end{figure*}
-
-\textcolor{blue}{pending:} \\
-A different approach in evaluating the transverse-momentum spectra independently of the shape of the multiplicity distribution is to divide it out. The two dimensional probability distribution depending on multiplicity and transverse momentum is divided by the corresponding probability of each multiplicity interval, according to the procedure described in chapter \ref{pTE}. The distribution is then integrated over the charged-multiplicity. The results for the event generators PYTHIA 8.24 and EPOS LHC in comparison to measurement are shown in figure \ref{rivet:pTE_pp}. The ratios do not show a distinct shape as before, they are roughly constant within statistical uncertainties for all center-of-mass energies. This is consistent with the conjecture that the distribution of the total transverse momentum available in the event to the shower particles is represented well, but the number of produced particles is overestimated.
-
-% \begin{figure*}[ht]
-%     \centering
-% 	\begin{subfigure}{0.495\textwidth}
-% 		\centering
-% 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/CompareRivet_RT_energies_PYTHIA.pdf}
-% 	\end{subfigure}
-% 	\hfill
-% 	\begin{subfigure}{0.495\textwidth}
-% 		\centering
-% 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pp/CompareRivet_RT_energies_EPOS.pdf}
-% 	\end{subfigure}
-%     \caption{??}
-% \end{figure*}
+\vspace{2cm}
 
 \section{p--Pb Collisions}
 
-Since lead nuclei consist of several dozen protons and neutrons, p--Pb collisions are effectively the convolution of a few (separate) pp (pn) sub-collisions. The models implemented in the selected MCEG, PYTHIA Angantyr and EPOS LHC, fundamentally differ in their modelling of the relation between pp and p--Pb collisions. While PYTHIA Angantyr treats the p--Pb collision as a superposition of almost independent pp (pn) sub-collisions, EPOS LHC utilizes a fluid transition between p--Pb and pp collisions. \\
-In the following the observables already analysed for pp collisions are calculated from events simulated with PYTHIA Angantyr and EPOS LHC and compared to measurement of p--Pb collisions for the center-of-mass energies 5.02 and 8.16 TeV. 
+Since lead nuclei consist of several dozen protons and neutrons, p--Pb collisions are effectively the convolution of a few (separate) pp (pn) sub-collisions. The models implemented in the selected MCEG, \pythia{Angantyr} and \epos{} fundamentally differ in their modelling of the relation between pp and p--Pb collisions, c.f. chapter \ref{theory:pythia} and \ref{theory:epos} respectively. While \pythia{Angantyr} treats the p--Pb collision as a superposition of almost independent pp (pn) sub-collisions, \epos{} utilizes a fluid transition between p--Pb and pp collisions. \\
+In the following, the observables already analysed for pp collisions are calculated from events simulated with \pythia{Angantyr} and \epos{} and compared to measurements of p--Pb collisions for the center-of-mass energies of 5.02 and 8.16 TeV. 
+
+    
+\subsection{Multiplicity}
+
+Figure \ref{rivet:mult_pPb} shows the charged-particle multiplicity distributions generated with \pythia{Angantyr} (left) and \epos{} (right) in comparison to measurements. Both MCEG reproduce the measured multiplicity distributions within 25\% up to a multiplicity of \mbox{\textit{N}\textsubscript{ch} $=$ 60}. While the data simulated using \angantyr{} is in agreement with the measurement within 30\% up to \mbox{\textit{N}\textsubscript{ch} $=$ 100}, the data simulated using \epos{} greatly underestimates the probability of multiplicities \mbox{\textit{N}\textsubscript{ch} $>$ 60}. \pythia{Angantyr} as well as \epos{} show, in addition to the global maximum at low multiplicities, a second much broader maximum at around \mbox{\textit{N}\textsubscript{ch} $\approx$ 25}, that is not visible in the measured data. 
 
 \begin{figure*}[t!]
     \centering
@@ -181,16 +154,11 @@ In the following the observables already analysed for pp collisions are calculat
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_mult_energies_EPOS_HI.pdf}
 	\end{subfigure}
-    \caption{Charged-particle multiplicity distributions arising from PYTHIA Angantyr (left) and EPOS LHC (right) simulations each in comparison to measurement.}
+    \caption{Charged-particle multiplicity distributions arising from \pythia{Angantyr} (left) and \epos{} (right) simulations each in comparison to measurement.}
     \label{rivet:mult_pPb}
-\end{figure*}
-    %\vspace*{\floatsep}
-    
-\subsection{\textcolor{blue}{Multiplicity}}
-
-Figure \ref{rivet:mult_pPb} shows the charged-particle multiplicity distributions generated with PYTHIA Angantyr (left) and EPOS LHC (right) in comparison to measurement. Both MCEG reproduce the measured multiplicity distributions within 25\% up to multiplicity \mbox{\textit{N}\textsubscript{ch} $=$ 60}. While Angantyr is in agreement with the measurement within 30\% up to \mbox{\textit{N}\textsubscript{ch} $=$ 100}, EPOS LHC greatly underestimates the probability of multiplicities \mbox{\textit{N}\textsubscript{ch} $>$ 60}. PYTHIA Angantyr as well as EPOS LHC show, in addition to the global maximum at low multiplicities, a second much broader maximum at around \mbox{\textit{N}\textsubscript{ch} $\approx$ 25}, that is not visible in the measured data. 
-
-\begin{figure*}[t!]
+% \end{figure*}
+    \vspace*{\floatsep}
+% \begin{figure*}
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -201,19 +169,19 @@ Figure \ref{rivet:mult_pPb} shows the charged-particle multiplicity distribution
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/multmax_vs_energies_pPb.pdf}
 	\end{subfigure}
-    \caption{Mean and Variance (left) as well as position and value of maximum (right) of charged-particle multiplicity from measurement, PYTHIA Angantyr and EPOS LHC in dependence of center-of-mass energy}
+    \caption{Mean and Variance (left) as well as position and value of maximum (right) of charged-particle multiplicity from measurement, \pythia{Angantyr} and \epos{} in dependence of center-of-mass energy}
     \label{rivet:fixpoints_pPb}
 \end{figure*}
 
-The structure in the EPOS LHC data is most likely caused by the combination of cluster and string fragmentation that is modelled in the event generator. The total multiplicity distribution is effectively the convolution of two separate distributions, one resulting from the corona with its maximum at low multiplicities, and the other one resulting from the core region with its maximum at around \mbox{\textit{N}\textsubscript{ch} $\approx$ 25}. The core region is expected to start contributing to the multiplicity distribution for multiplicities \mbox{\textit{N}\textsubscript{ch} $\geq$ 12} \cite{EPOS_LHC}. The comparison to the measurement suggests, however, that this threshold should be shifted to slightly lower multiplicities. With increasing string densities inside of the core-region, the produced, and hence the total multiplicity also increases. Since the probability of measuring events with high multiplicities is greatly underestimated, it can be concluded that the string densities might not be modelled high enough at these center-of-mass energies.\\
-PYTHIA (8.24) Angantyr does not make such a clear separation in phase space between different models. The simulation of each one of the pp (pn) sub-collision, however, is divided into different parts that are executed independently and in order, as explained in chapter \ref{theory:MCEG}. The resulting multiplicity distributions can hence be viewed as the convolution of the multiplicity distribution resulting from the simulation of the primary hard collisions from each pp (pn) sub-collisions, and the multiplicity distribution resulting from each underlying event contribution. The ratio between MC data and measurement suggests that the transition between events with a lot of underlying event activity and events with little underlying event activity might be too harsh.\\
+The structure in the \epos{} data is most likely caused by the combination of cluster and string fragmentation that is modelled in the event generator. The total multiplicity distribution is effectively the convolution of two separate distributions, one resulting from the corona with its maximum at low multiplicities, and the other one resulting from the core region with its maximum at around \mbox{\textit{N}\textsubscript{ch} $\approx$ 25}. The core region is expected to start contributing to the multiplicity distribution for multiplicities \mbox{\textit{N}\textsubscript{ch} $\geq$ 12} \cite{EPOS_LHC}. The comparison to the measurement suggests, however, that this threshold should be shifted to slightly lower multiplicities. With increasing string densities inside of the core-region, the produced, and hence the total multiplicity also increases. Since the probability of measuring events with high multiplicities is greatly underestimated, it can be concluded that the string densities might not be modelled high enough at these center-of-mass energies.\\
+PYTHIA (8.24) \angantyr{} does not make such a clear separation in phase space between using different hadronisation models. The simulation of each one of the pp (pn) sub-collision, however, is divided into the primary hard collision and the corresponding parton shower as well as the underlying event \ref{theory:MCEG}. The multiplicity distributions can hence be viewed as the convolution of the multiplicity distribution resulting from the simulation of the primary hard collisions of each pp (pn) sub-collisions, and the multiplicity distributions resulting from each underlying event contribution. The ratio between MC data and measurement suggests that the transition between events with a lot of underlying event activity and events with little underlying event activity might be too harsh.\\
 Figure \ref{rivet:fixpoints_pPb} shows the mean and variance (left) as well as the position and the value of the maximum (right) of these multiplicity distributions as function of the center-of-mass energy. 
-Although the shape of the multiplicity distributions is not represented well in either MCEG, PYTHIA Angantyr describes the mean (variance) of the charged-particle multiplicity within 5\% (7\%). Whereas mean (variance) generated with EPOS LHC are in agreement with data within 7\% (20\%). The positions of the global maximum is not represented well by both MCEG, while the value of the maximum is in agreement with measurement within 10\%. \\
-The energy dependence of the multiplicity distributions resulting from EPOS LHC and Angantyr simulations is represented about equally well in both MCEG. 
+Although the shape of the multiplicity distributions is not represented well in either MCEG, \pythia{Angantyr} describes the mean (variance) of the charged-particle multiplicity within 5\% (7\%). Whereas mean (variance) generated with \epos{} are in agreement with data within 7\% (20\%). The positions of the global maximum is not represented well by both MCEG, while the value of the maximum is in agreement with measurement within 10\%. \\
+The energy dependence of the multiplicity distributions resulting from \epos{} and \angantyr{} simulations is represented about equally well in both MCEG. 
 
-\subsection{\textcolor{blue}{Transverse Momentum}}
+\subsection{Transverse Momentum}
 
-The transverse-momentum distributions simulated with PYTHIA Angantyr (left) and EPOS LHC (right) are shown in comparison to measurement in figure \ref{rivet:pT_pPb}. 
+The transverse-momentum distributions simulated with \pythia{Angantyr} (left) and \epos{} (right) are shown in comparison to measurements in figure \ref{rivet:pT_pPb}. 
 
 \begin{figure*}[t!]
     \centering
@@ -226,16 +194,14 @@ The transverse-momentum distributions simulated with PYTHIA Angantyr (left) and 
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_pT_energies_EPOS_HI.pdf}
 	\end{subfigure}
-    \caption{Transverse momentum distributions of charged particles from PYTHIA Angantyr (left) and EPOS LHC (right) in comparison to measurement}
+    \caption{Transverse momentum distributions of charged particles from \pythia{Angantyr} (left) and \epos{} (right) in comparison to measurement}
     \label{rivet:pT_pPb}
 \end{figure*}
 
-Whereas the multiplicity distributions from PYTHIA Angantyr and EPOS LHC are quite similar in shape, the structure of the corresponding transverse-momentum distributions differ quite a lot. While the EPOS LHC data is in agreement with the measurement within 15\% up to \mbox{\textit{p}\textsubscript{T} $=$ 4 GeV/\textit{c}}, the PYTHIA Angantyr data describes the measurement within (only) 50\%. 
-The transverse-momentum distributions generated with EPOS LHC are slightly overestimated up to \mbox{\textit{p}\textsubscript{T} $\approx$ 1 GeV/\textit{c}}, for \mbox{\textit{p}\textsubscript{T} $>$ 1 GeV/\textit{c}} the spectra are underestimated, meaning that the spectra are slightly too soft in comparison to the measured data. The data generated with PYTHIA Angantyr, however, greatly overestimates the probabilities for particles carrying \mbox{\textit{p}\textsubscript{T} $<$ 1 GeV/\textit{c}}, and greatly underestimates the probabilities for transverse momenta \mbox{\textit{p}\textsubscript{T} $>$ 1 GeV/\textit{c}}, the spectra are hence much too soft, as can also be seen from the ratio to measurement. This is most likely due to the lack of string interactions in the modelling of p--Pb (A-A) collisions in the Angantyr model. Each parton-parton collision can be viewed as a \textcolor{blue}{flux tube}, also called string, cf chapter \ref{theory:EPOS_LHC}. These flux tubes could potentially overlap. In this case the strings will repel\footnote{They could also potentially produce strange hadrons or attenuate each other, not sure if that is important} each other, giving the flux tubes additional transverse momentum, leading to harder \mbox{\textit{p}\textsubscript{T}} spectra. It is planned to include these effects in future versions of the PYTHIA-heavy-ion models, which will be called Gleipnir. \\
-Since these string interactions are included in the EPOS LHC model of pp, p-Pb and Pb-Pb (A-A) collisions, the transverse-momentum distributions are much harder in comparison to the PYTHIA Angantyr data.\\
-Both PYTHIA Angantyr as well as EPOS LHC describe the energy dependence of the transverse-momentum distributions quite well, even better than those of the multiplicity distributions.\\
-
-As already discussed for the case of pp collisions, the transverse-momentum spectra are strongly influenced by the corresponding multiplicity distributions. In order to attempt an analysis of the transverse momenta independently of the shape of the multiplicity distributions, their mean and variance are calculated as function of charged-particle multiplicity as was the case for pp collisions. The results are shown in figure \ref{rivet:mean_pPb} as well as in figure \ref{rivet:var_pPb}.
+Whereas the multiplicity distributions from \pythia{Angantyr} and \epos{} are quite similar in shape, the structure of the corresponding transverse-momentum distributions differ quite a lot. While the \epos{} data is in agreement with the measurement within 15\% up to \mbox{\textit{p}\textsubscript{T} $=$ 4 GeV/\textit{c}}, the \pythia{Angantyr} data describes the measurement within (only) 50\%. 
+The transverse-momentum distributions generated with \epos{} are slightly overestimated up to \mbox{\textit{p}\textsubscript{T} $\approx$ 1 GeV/\textit{c}}, for \mbox{\textit{p}\textsubscript{T} $>$ 1 GeV/\textit{c}} the spectra are underestimated, meaning that the spectra are slightly too soft in comparison to the measured data. The data generated with \pythia{Angantyr}, however, greatly overestimates the probabilities for particles carrying \mbox{\textit{p}\textsubscript{T} $<$ 1 GeV/\textit{c}}, and greatly underestimates the probabilities for transverse momenta \mbox{\textit{p}\textsubscript{T} $>$ 1 GeV/\textit{c}}, the spectra are hence much too soft, as can also be seen from the ratio to measurement. This is most likely due to the lack of string interactions in the modelling of p--Pb (A-A) collisions in the \angantyr{} model. Each parton-parton collision can be viewed as a flux tube, i.e. string, as explained in chapter \ref{theory:epos}. These flux tubes could potentially overlap. In this case, the strings could repel each other, giving the flux tubes additional transverse momentum, leading to harder \mbox{\textit{p}\textsubscript{T}} spectra. \\
+Since these string interactions are included in the \epos{} model of pp, p-Pb and Pb-Pb (A-A) collisions, the transverse-momentum distributions are much harder in comparison to the \pythia{Angantyr} data.\\
+Both \pythia{Angantyr} as well as \epos{} describe the energy dependence of the transverse-momentum distributions quite well, even better than those of the multiplicity distributions.
 
 \begin{figure*}[t!]
     \centering
@@ -248,11 +214,11 @@ As already discussed for the case of pp collisions, the transverse-momentum spec
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_mean_energies_EPOS_HI.pdf}
 	\end{subfigure}
-    \caption{Mean transverse momentum as function of multiplicity calculated from PYTHIA Angantyr (left) and EPOS LHC (right) in comparison to measurement.}
+    \caption{Mean transverse momentum as function of multiplicity calculated from \pythia{Angantyr} (left) and \epos{} (right) in comparison to measurement.}
     \label{rivet:mean_pPb}
-%\end{figure*}
-    \vspace*{\floatsep}
-%\begin{figure*}[ht]
+\end{figure*}
+    % \vspace*{\floatsep}
+\begin{figure*}[ht]
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -263,42 +229,11 @@ As already discussed for the case of pp collisions, the transverse-momentum spec
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_variance_energies_EPOS_HI.pdf}
 	\end{subfigure}
-    \caption{Variance of transverse momentum as function of multiplicity calculated from PYTHIA Angantyr (left) and EPOS LHC (right) in comparison to measurement.}
+    \caption{Variance of transverse momentum as function of multiplicity calculated from \pythia{Angantyr} (left) and \epos{} (right) in comparison to measurement.}
     \label{rivet:var_pPb}
 \end{figure*}
 
-As could already be expected from the analysis of the \mbox{\textit{p}\textsubscript{T}} spectra, generated with PYTHIA Angantyr, the mean as well as the variance are not described well, and are only included for the purpose of completeness. The mean and variance distributions calculated from the EPOS LHC data, however, are in agreement within 8\% and 25\% respectively. The general shape of the distributions is not well described for both (central) moments and center-of-mass energies. For multiplicities \mbox{\textit{N}\textsubscript{ch} $<$ 20} the mean (variance) calculated from the generated distributions is underestimated and rises steeply and almost linearly to \mbox{\textit{N}\textsubscript{ch} $\approx$ 24}, while the measured distribution shows a rather smooth curvature over the whole \mbox{\textit{p}\textsubscript{T}} range in comparison. Above \mbox{\textit{N}\textsubscript{ch} $\approx$ 30} the EPOS LHC data displays only a slight upward gradient, the measurement is underestimated in this region as well. In the interval \mbox{20 $\leq$ \textit{N}\textsubscript{ch} $<$ 30} the measurement is overestimated. The change in the slope of the upward gradient of the EPOS LHC data might roughly \textcolor{blue}{indicate the point where the core region starts} contributing to the total multiplicity. \\
-
-\begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_pTE_energies_ANGANTYR.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_pTE_energies_EPOS_HI.pdf}
-	\end{subfigure}
-    \caption{Transverse momentum distributions normalised to the shape of the multiplicity distributions (cf. chapter \ref{pTE}) calculated from PYTHIA Angantyr (left) and EPOS LHC (right) in comparison to measurement}
-    \label{rivet:pTE_pPb}
-\end{figure*}
-
-\textcolor{blue}{pending:} \\
-Figure \ref{rivet:pTE_pPb} shows the results after the normalisation procedure as described in chapter \ref{theory:obs:} has been applied to the transverse-momentum spectra. The distributions from EPOS LHC and PYTHIA Angantyr as well as mesurement look quite similar to before, the deviation did not change.
-
-% \begin{figure*}[ht]
-%     \centering
-% 	\begin{subfigure}{0.495\textwidth}
-% 		\centering
-% 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_RT_energies_ANGANTYR.pdf}
-% 	\end{subfigure}
-% 	\hfill
-% 	\begin{subfigure}{0.495\textwidth}
-% 		\centering
-% 		\includegraphics[width=0.95\textwidth]{Analysis/img/rivet/pPb/CompareRivet_RT_energies_EPOS_HI.pdf}
-% 	\end{subfigure}
-%     \caption{??}
-% \end{figure*}
+As already discussed for the case of pp collisions, the transverse-momentum spectra are strongly influenced by the corresponding multiplicity distributions. In order to attempt an analysis of the transverse momenta independently of the shape of the multiplicity distributions, their mean and variance are calculated as function of charged-particle multiplicity as was the case for pp collisions. The results are shown in figure \ref{rivet:mean_pPb} as well as in figure \ref{rivet:var_pPb}.
+As could already be expected from the analysis of the \mbox{\textit{p}\textsubscript{T}} spectra generated with \pythia{Angantyr}, the mean as well as the variance are not described well. The mean and variance distributions calculated from the \epos{} data, however, are in agreement within 8\% and 25\% respectively. The general shape of the distributions is not well described for both (central) moments and center-of-mass energies. For multiplicities of \mbox{\textit{N}\textsubscript{ch} $<$ 20}, the mean (variance) calculated from the generated distributions is underestimated and rises steeply and almost linearly to \mbox{\textit{N}\textsubscript{ch} $\approx$ 24}, while the measured distribution shows a rather smooth curvature over the whole \mbox{\textit{p}\textsubscript{T}} range in comparison. Above \mbox{\textit{N}\textsubscript{ch} $\approx$ 30} the \epos{} data displays only a slight upward gradient, the measurement is underestimated in this region as well. In the interval \mbox{20 $\leq$ \textit{N}\textsubscript{ch} $<$ 30} the measurement is overestimated. The change in the slope of the upward gradient of the \epos{} data might roughly indicate the point where the core region starts contributing to the total multiplicity. 
 
 \end{document}
