@@ -32,7 +32,7 @@ The most general conditions indicate the detection of any particle collision, i.
 These conditions are implemented in so-called minimum bias (MB) triggers. 
 Events recorded using the minimum bias (MB) trigger are as close to including all primary processes as possible with the detector setup.
 
-\section{Detector Simulation}
+\section{Detector Simulation} \label{dec_sim}
 
 The detectors as explained above are not able to give a fully accurate measurement of the particle properties. Additionally to limited space coverage (acceptance), the efficiency of the detectors impacts the measurement. In order to obtain the \textit{true} particle properties, i.e. something as close as possible to their original properties, these detector effects have to be corrected for. This is done using detector simulations such as GEANT \cite{GEANT} that implement the properties of the detectors and simulate the interactions of the particles with the detector material. The detector simulations are coupled with MCEG such as \pythia{8} to give an estimate on the expected response of the experiment to the measured particles. From this methods can be devised to reconstruct the original properties from the measured ones. Since the description of particle collisions in MCEG is not perfect, this introduces additional uncertainties into the results.
 

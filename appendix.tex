@@ -1,18 +1,68 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-\chapter{} \label{app:waves}
+\chapter{Run and simulation data} \label{app:data}
 
-\begin{figure}
+\begin{table}[h!]
     \centering
-    \includegraphics[width=.6\textwidth]{Analysis/img/ue/leading_particle/ptvsphi_MB_full.pdf}
-    \caption{Number of measured \textit{leading} particles as function of leading particle \textit{p}\textsubscript{T} and $\varphi$.}
-    \label{fig:my_label}
+    \begin{tabular}{l l}
+         Collision system: &  proton - proton\\
+         Energy: & $\sqrt{s}$ \\
+         Data taking period: & LHC17p\_pass1\_CENT\_wSDD \\
+         Monte Carlo production: & LHC17l3b\_CENT\_wSDD  \\
+         Runlist: & 282343, 282342, 282341, 282340, 282314, 282313,\\
+                  & 282312, 282309, 282307, 282306, 282305, 282304, \\
+                  & 282303, 282302, 282247, 282230, 282229, 282227, \\
+                  & 282224, 282206, 282189, 282147, 282146, 282127, \\
+                  & 282126, 282125, 282123, 282122, 282120, 282119, \\
+                  & 282118, 282099, 282098, 282078, 282051, 282050, \\
+                  & 282031, 282030, 282025, 282021, 282016, 282008
+    \end{tabular}
+    \caption{Specification of data analysed in this work.}
+    \label{tab:runs}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{r|c|c || r|c|c}
+        \multicolumn{3}{c||}{proton-proton} & \multicolumn{3}{|c}{proton-proton} \\
+        \hline
+         $\sqrt{s}$ (TeV) &  \pythia{8.24} & \epos{}& $\sqrt{s}$ (TeV) &  \textsc{Angantyr} & \epos{}       \\
+         2.76 & 1.95 10\textsuperscript{6} & 1.96 10\textsuperscript{6} & & & \\
+         5.02 & 2.07 10\textsuperscript{6} & 1.98 10\textsuperscript{6} & 5.02 & 2.23 10\textsuperscript{5} & 2.36 10\textsuperscript{5}\\
+         7 &    2.08 10\textsuperscript{6} & 1.99 10\textsuperscript{6} & 8.16 & 2.24 10\textsuperscript{5} & 2.36 10\textsuperscript{5} \\
+         13 &   2.11 10\textsuperscript{6} & 2.01 10\textsuperscript{6} & & &  \\
+    \end{tabular}
+    \caption{Number of generated events with the corresponding MCEG used in this analysis.}
+    \label{tab:statistics}
+\end{table}
+
+\chapter{Transverse Momentum Efficiency} \label{app:waves}
+
+\begin{figure} [h!]
+      \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Analysis/img/ue/leading_particle/ptvsphi_MB_full.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.83\textwidth]{Analysis/img/ue/leading_particle/ptvsphi_proj.pdf}
+	\end{subfigure}
+    \caption{Number of measured \textit{leading} particles as function of leading particle \textit{p}\textsubscript{T} and $\varphi$ (left) and integrated leading particle $\varphi$ distribution (right) with and without leading particle \pt{} cut}.
+    \label{app:wavies}
 \end{figure}
 
-\chapter{} \label{app:unscaled}
+The left side figure \ref{app:wavies} shows the number of measured \textit{leading} particles, i.e. particles with the highest \pt{} in their event, as a function of the leading particle \pt{} and the leading particle $\varphi$. It is clearly visible that the number of measured particles is diminished in certain $\varphi$ regions, moreover the position of these regions depends on the \pt{} of the particles. The right side of figure \ref{app:wavies} shows the corresponding leading-\pt{} integrated distributions with and without leading particle \pt{} cut. It can be seen that the maxima in the distribution without the cut correspond exatcly to the minima in the distribution with cut. When combining particles from one of the distributions each, the resulting distribution will show a wavelike structure, like the $\Delta\varphi$ distributions discussed in chapter \ref{ue:leading_track}.
 
-\begin{figure}
+\chapter{Unscaled Distributions} \label{app:unscaled}
+
+In the following the unscaled multiplicity, mean \pt{} and variance \pt{} distributions, corresponding to the scaled ones as presented in chapter \ref{UE} are shown.
+
+\vspace{5cm}
+
+\begin{figure}[h!]
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -23,8 +73,36 @@
 		\centering
 		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/event_vars/multMB.pdf}
 	\end{subfigure}
-    \caption{}
-    \label{ue:multiplicity}
+    \caption{Multiplicity distributions in the corresponding azimuthal regions for events with leading \pt{} cut applied (left) as well as without (right). The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
+    \label{ue:multNoScale}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/mean.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/meanMB.pdf}
+	\end{subfigure}
+    \caption{Mean \pt{} in the corresponding azimuthal regions for events with leading \pt{} cut applied (left) as well as without (right). The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
+    \label{ue:meanNoScale}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/var.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/pT_spectra/varMB.pdf}
+	\end{subfigure}
+    \caption{Variance \pt{} in the corresponding azimuthal regions for events with leading \pt{} cut applied (left) as well as without (right). The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
+    \label{ue:varNoScale}
 \end{figure}
 
 \end{document}
