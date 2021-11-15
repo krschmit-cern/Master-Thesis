@@ -4,25 +4,25 @@
 The experimental data considered in the analysis described in this thesis was taken with the ALICE detector and the LHC. \\
 The 26.7 km long LHC (Large Hadron Collider) is currently the largest and most powerful collider ring at the nuclear research facility CERN. It is able to accelerate and collide protons as well as heavy ions, such as lead nuclei. The particle beams are collided at four different collision points at which the major experiments ALICE, ATLAS, CMS and LHCb are build. The colliding protons can reach center-of-mass energies $\sqrt{s}$ up to 13 TeV, the colliding heavy ions up to 5.02 TeV per nucleon-nucleon pair. 
 
-The ALICE (A Large Ion Collider Experiment) detector was originally built to investigate the properties of a possible QGP produced in heavy ion collisions, but serves to study the properties of proton-proton collisions as well. In order to achieve this, ALICE consists of several sub-detectors that are build around the collision point. The whole detector system is located inside of a solenoid magnet, producing a magnetic field of typically 0.5T. A schematic cross section of ALICE can be seen in figure \ref{obs:ALICE}. \\
-The diverse sub-detectors are build to measure several different particles and their properties. The innermost detectors, the ITS, the TPC and the TRD, are used for particle tracking as well as particle identification. The TOF detector measures the time of flight starting from the T0 detector, which can also be used for particle identification. 
+The ALICE (A Large Ion Collider Experiment) detector was originally built to investigate the properties of a possible QGP produced in heavy-ion collisions, but serves to study the properties of proton-proton collisions as well. In order to achieve this, ALICE consists of several sub-detectors that are build around the collision point. The whole detector system is located inside of a solenoid magnet, producing a magnetic field of typically 0.5T. A schematic cross section of ALICE can be seen in figure \ref{obs:ALICE}. \\
+The diverse sub-detectors are build to measure several different particles and their properties. The innermost detectors, the ITS, the TPC and the TRD, are used for particle tracking as well as particle identification. The TOF measures the time of flight starting from the T0 detector, which can also be used for particle identification. 
 The electromagnetic calorimeters EMCal, DCal and PHOS are used to measure photon, electron and positron energies. The HMPID detector is used to identify particles with high momenta. \\
 Especially the TPC sub-detector allows for high precision measurements of charged-particle momenta, as will be described in the following section.
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width=0.8\textwidth]{Theory/img/alice_setup.jpg}
-    \caption{Cross section of the ALICE experiment at CERN, modified from \cite{ALICEschematic}}
+    \caption{Cross section of the ALICE experiment at CERN, modified from \cite{ALICEschematic}.}
     \label{obs:ALICE}
 \end{figure}
 
 
-\section{Measurement of Charged Particles}
+\section{Measurement of Charged Particles} \label{exp:TPC}
 
-The ALICE time projection chamber (TPC) measures the tracks of charged particles passing through the detector volume. The cylindrical body of the TPC is divided into two regions by a central electrode. An electric field is applied between the electrode and the two end plates of the TPC, creating two homogeneous drift regions. The TPC is filled with a gas mixture that is ionised along the track of a charged particle traversing the detector volume. The resulting electrons travel along the electric field towards the end plates where they are detected in read out chambers. A three dimensional image of the tracks can be reconstructed from the measured spatial points and the drift time. \\
+The ALICE time projection chamber (TPC) \cite{TPCdesignReport} measures the tracks of charged particles passing through the detector volume. The cylindrical body of the TPC is divided into two regions by a central electrode. An electric field is applied between the electrode and the two end plates of the TPC, creating two homogeneous drift regions. The TPC is filled with a gas mixture that is ionised along the track of a charged particle traversing the detector volume. The resulting electrons travel along the electric field towards the end plates where they are detected in read out chambers. A three dimensional image of the tracks can be reconstructed from the measured spatial points and the drift time. \\
 The coordinate system is chosen, such that the z-axis is aligned with the beam axis and the azimuth $\phi$ is measured in the x-y plane. Instead of the polar angle $\theta$, the so-called pseudorapidity $\eta = -\ln[\tan(\theta/2)]$ is used to describe the angle with respect to the beam axis. The TPC covers the full $\phi$ range, and a pseudorapidity range of $|\eta| < 0.9$.
 
-The momentum of the particles can be inferred from the curvature of the tracks in the magnetic field. The beam particles are originally accelerated in the z direction, during the collision they gain momentum directed in the x-y plane. This is denoted as transverse momentum p\textsubscript{T}, as it is transverse with regards to the beam axis. The transverse momentum is therefore closely tied to the particle production mechanisms. The momentum information can be combined with the specific energy loss of the particles in order to identify the particle species.\\
+The momentum of the particles can be inferred from the curvature of the tracks in the magnetic field. The beam particles are originally accelerated in the z direction, during the collision they gain momentum directed in the x-y plane. This is denoted as transverse momentum $p_\text{T}$, as it is transverse with regards to the beam axis. The transverse momentum is therefore closely tied to the particle production mechanisms. The momentum information can be combined with the specific energy loss of the particles in order to identify the particle species \cite{dEdx}. \\
 Since each track corresponds to exactly one charged particle, the number of produced charged particles per event, the charged-particle multiplicity, corresponds to the number of measured tracks. 
 
 \section{Minimum Bias Trigger}
@@ -30,11 +30,10 @@ Since each track corresponds to exactly one charged particle, the number of prod
 Technically it is not feasible to permanently read out the detector information, instead specific conditions are employed that trigger the data acquisition processes. 
 The most general conditions indicate the detection of any particle collision, i.e. any event, inside of the detector and distinguish them from signals from other sources such as cosmic radiation. 
 These conditions are implemented in so-called minimum bias (MB) triggers. 
-Events recorded using the minimum bias (MB) trigger are as close to including all primary processes as possible with the detector setup.
+Events recorded using a minimum bias (MB) trigger are as close to including all primary processes as possible with the detector setup.
 
 \section{Detector Simulation} \label{dec_sim}
 
-The detectors as explained above are not able to give a fully accurate measurement of the particle properties. Additionally to limited space coverage (acceptance), the efficiency of the detectors impacts the measurement. In order to obtain the \textit{true} particle properties, i.e. something as close as possible to their original properties, these detector effects have to be corrected for. This is done using detector simulations such as GEANT \cite{GEANT} that implement the properties of the detectors and simulate the interactions of the particles with the detector material. The detector simulations are coupled with MCEG such as \pythia{8} to give an estimate on the expected response of the experiment to the measured particles. From this methods can be devised to reconstruct the original properties from the measured ones. Since the description of particle collisions in MCEG is not perfect, this introduces additional uncertainties into the results.
-
+The detectors as explained above are not able to give a fully accurate measurement of the particle properties. Additionally to limited space coverage (acceptance), the efficiency of the detectors impacts the measurement. In order to obtain the \textit{true} particle properties, i.e. something as close as possible to their original properties, these detector effects have to be corrected for. This is done using detector simulations such as GEANT3 \cite{GEANT} that implement the properties of the detectors and simulate the interactions of the particles with the detector material. The detector simulations are coupled with MCEG such as \pythia{8} to give an estimate on the expected response of the experiment to the incoming particles. From this methods can be devised to reconstruct the original properties from the measured ones. Since the description of particle collisions in MCEG is not perfect, this introduces additional systematic uncertainties into the results.
 
 \end{document}

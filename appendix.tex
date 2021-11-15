@@ -1,33 +1,14 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-\chapter{Run and simulation data} \label{app:data}
+\chapter{Run and Simulation data} \label{app:data}
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{l l}
-         Collision system: &  proton - proton\\
-         Energy: & $\sqrt{s}$ \\
-         Data taking period: & LHC17p\_pass1\_CENT\_wSDD \\
-         Monte Carlo production: & LHC17l3b\_CENT\_wSDD  \\
-         Runlist: & 282343, 282342, 282341, 282340, 282314, 282313,\\
-                  & 282312, 282309, 282307, 282306, 282305, 282304, \\
-                  & 282303, 282302, 282247, 282230, 282229, 282227, \\
-                  & 282224, 282206, 282189, 282147, 282146, 282127, \\
-                  & 282126, 282125, 282123, 282122, 282120, 282119, \\
-                  & 282118, 282099, 282098, 282078, 282051, 282050, \\
-                  & 282031, 282030, 282025, 282021, 282016, 282008
-    \end{tabular}
-    \caption{Specification of data analysed in this work.}
-    \label{tab:runs}
-\end{table}
-
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{r|c|c || r|c|c}
-        \multicolumn{3}{c||}{proton-proton} & \multicolumn{3}{|c}{proton-proton} \\
+    \begin{tabular}{c|c|c||c|c|c}
+        \multicolumn{3}{c||}{proton-proton} & \multicolumn{3}{c}{proton-lead} \\
         \hline
-         $\sqrt{s}$ (TeV) &  \pythia{8.24} & \epos{}& $\sqrt{s}$ (TeV) &  \textsc{Angantyr} & \epos{}       \\
+         $\sqrt{s}$ (TeV) &  \pythia{8.24} & \epos{}& $\sqrt{s_\text{NN}}$ (TeV) &  \textsc{Angantyr} & \epos{}       \\
          2.76 & 1.95 10\textsuperscript{6} & 1.96 10\textsuperscript{6} & & & \\
          5.02 & 2.07 10\textsuperscript{6} & 1.98 10\textsuperscript{6} & 5.02 & 2.23 10\textsuperscript{5} & 2.36 10\textsuperscript{5}\\
          7 &    2.08 10\textsuperscript{6} & 1.99 10\textsuperscript{6} & 8.16 & 2.24 10\textsuperscript{5} & 2.36 10\textsuperscript{5} \\
@@ -36,6 +17,157 @@
     \caption{Number of generated events with the corresponding MCEG used in this analysis.}
     \label{tab:statistics}
 \end{table}
+
+\vspace{2cm}
+
+\begin{table}[h!]
+    %\centering
+    \begin{tabular}{l l}
+         Collision system: &  proton - proton\\
+         Energy: & $\sqrt{s} = 5.02$ TeV \\
+         Data taking period: & LHC17p\_pass1\_CENT\_wSDD \\
+         Monte Carlo production: & LHC17l3b\_CENT\_wSDD (\pythia{8.1}, Monash 2013) \\
+         Runlist: & 282343, 282342, 282341, 282340, 282314, 282313,\\
+                  & 282312, 282309, 282307, 282306, 282305, 282304, \\
+                  & 282303, 282302, 282247, 282230, 282229, 282227, \\
+                  & 282224, 282206, 282189, 282147, 282146, 282127, \\
+                  & 282126, 282125, 282123, 282122, 282120, 282119, \\
+                  & 282118, 282099, 282098, 282078, 282051, 282050, \\
+                  & 282031, 282030, 282025, 282021, 282016, 282008  \\
+    \end{tabular}
+    \vspace{.5cm} \\
+    \begin{tabular}{l l l}
+    \multicolumn{2}{l}{Number of events} & \\
+         & after track selection: & $3 \cdot 10^8$  \\
+         & after leading-particle \pt{} cut: & $3.37 \cdot 10^6$ 
+    \end{tabular}
+    \caption{Specification of data analysed in this work.}
+    \label{tab:runs}
+\end{table}
+
+\begin{table}[ht!]
+    \begin{tabular}{l l}
+         Collision system: &  proton - proton\\
+         Energy: & $\sqrt{s} = 2.76$ TeV \\
+         Data taking period: & LHC11a\_pass4\_with\_SDD  \\
+         Monte Carlo production: & LHC12f1a\_wSDD (\pythia{8.1} Monash 2013) \\
+         \\
+         Collision system: &  proton - proton\\
+         Energy: & $\sqrt{s} = 5.02$ TeV \\
+         Data taking period: & LHC17p\_CENT\_pass1 and LHC17q\_CENT\_pass1 \\
+         Monte Carlo production: & LHC17l3b\_CENT (\pythia{8.1} Monash 2013) \\
+         \\
+         Collision system: &  proton - proton\\
+         Energy: & $\sqrt{s} = 7$ TeV \\
+         Data taking period: & LHC10d\_pass4 \\
+         Monte Carlo production: & LHC14j4d (\pythia{6} Perugia 2011)\\
+         \\
+         Collision system: &  proton - proton\\
+         Energy: & $\sqrt{s} = 13$ TeV \\
+         Data taking period: & LHC16k\_pass2 \\
+         Monte Carlo production: & LHC18f1\_extra (\pythia{8.1} Monash 2013) \\
+         \\
+         Collision system: &  proton - lead\\
+         Energy: & $\sqrt{s_\text{NN}} = 5.02$ TeV \\
+         Data taking period: & LHC13b\_pass3 \\
+         Monte Carlo production: & LHC13b2\_efix\_p3 \\
+         \\
+         Collision system: &  proton - lead, lead - proton\\
+         Energy: & $\sqrt{s_\text{NN}} = 8.16$ TeV \\
+         Data taking period: & LHC16\{r,s\}\_pass1\_CENT\_wSDD \\
+         Monte Carlo production: & LHC17f3\{a,b\}\_cent\_fix \\
+         
+    \end{tabular}
+    \caption{Specifications for the data used in the comparison to the MCEG.}
+    \label{tab:my_label}
+\end{table}
+
+
+\chapter{Monte Carlo Closure Distributions} \label{app:mc_closure}
+
+In the following the Monte Carlo closure distributions of the transverse momentum for the case where the leading-particle \pt{} cut has been applied, and for the multiplicity for event samples with and without the leading-particle \pt{} cut applied, are shown.
+The closed circles indicate the ratio was taken between the fully integrated distributions, the closed stars indicate that the ratio was taken between the distributions limited to one value \mult{}, and then averaged over \mult{} with the contributions being weighted with p(\mult{}). The corresponding weighted standard deviation is shown as a filled area. 
+
+\begin{figure*}[b!]
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_full.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_toward.pdf}
+	\end{subfigure}
+    \vspace*{\floatsep}
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_transverse.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_away.pdf}
+	\end{subfigure}
+    \caption{The Monte Carlo closure distributions for \mult{} in the three azimuthal regions as well as their combination \textit{all regions} for events where the leading particle \pt{} cut has been applied.}
+    \label{dataset:pt_closure_cut}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_full.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_toward.pdf}
+	\end{subfigure}
+    \vspace*{\floatsep}
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_transverse.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_away.pdf}
+	\end{subfigure}
+    \caption{The Monte Carlo closure distributions for \mult{} in the three azimuthal regions as well as their combination \textit{all regions} for events no leading particle \pt{} cut has been applied.}
+    \label{dataset:mult_closure_mb}
+% \end{figure*}
+        \vspace*{\floatsep}
+% \begin{figure*}[t!]
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_full.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_toward.pdf}
+	\end{subfigure}
+    \vspace*{\floatsep}
+    \centering
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_transverse.pdf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.495\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_away.pdf}
+	\end{subfigure}
+    \caption{The Monte Carlo closure distributions for \mult{} in the three azimuthal regions as well as their combination \textit{all regions} for events where the leading particle \pt{} cut has been applied.}
+    \label{dataset:mult_closure_cut}
+\end{figure*}
+
+
+
 
 \chapter{Transverse Momentum Efficiency} \label{app:waves}
 
@@ -54,7 +186,9 @@
     \label{app:wavies}
 \end{figure}
 
-The left side figure \ref{app:wavies} shows the number of measured \textit{leading} particles, i.e. particles with the highest \pt{} in their event, as a function of the leading particle \pt{} and the leading particle $\varphi$. It is clearly visible that the number of measured particles is diminished in certain $\varphi$ regions, moreover the position of these regions depends on the \pt{} of the particles. The right side of figure \ref{app:wavies} shows the corresponding leading-\pt{} integrated distributions with and without leading particle \pt{} cut. It can be seen that the maxima in the distribution without the cut correspond exatcly to the minima in the distribution with cut. When combining particles from one of the distributions each, the resulting distribution will show a wavelike structure, like the $\Delta\varphi$ distributions discussed in chapter \ref{ue:leading_track}.
+The left side of figure \ref{app:wavies} shows the number of measured \textit{leading} particles, i.e. particles with the highest \pt{} in their event, as a function of the leading-particle \pt{} and the leading-particle $\varphi$. It is clearly visible that the number of measured particles is diminished in certain regions of $\varphi$, moreover the position of these regions depends on the \pt{} of the particles. \\
+The end plates of the ALICE TPC, measuring the space time points used for the track reconstruction, consist of 18 separate segments. In between those segments no particles can be detected. These gaps are located every 20$^\circ$ in azimuth, starting from \mbox{$\varphi = 0^\circ$}. This corresponds to the diminished areas in the region above leading-particle \mbox{\pt{} $= 3.5$ GeV/$c$}. In this region the particle tracks are barely curved inside of the magnetic field, i.e. the azimuth $\varphi$ of the particles, that is measured at the vertex position, corresponds roughly to the position where the particles hit the detector. For smaller leading-particle \pt{} however, the curvature of the tracks causes the diminished areas to shift up to 10$^\circ$ with respect to the position of the gaps.\\
+The right side of figure \ref{app:wavies} shows the corresponding leading-particle $\varphi$ distribution, integrated over the whole leading-particle \pt{} range, with and without leading-particle \pt{} cut applied respectively. It can be seen that the maxima in the distribution without the cut correspond exactly to the minima in the distribution with cut. When combining particles from one of the distributions each the resulting distributions will show a superimposed wavelike structure, as is the case for the $\Delta\varphi$ distributions, discussed in chapter \ref{ue:leading_track}, with the leading-particle \pt{} cut applied.
 
 \chapter{Unscaled Distributions} \label{app:unscaled}
 
@@ -62,7 +196,7 @@ In the following the unscaled multiplicity, mean \pt{} and variance \pt{} distri
 
 \vspace{5cm}
 
-\begin{figure}[h!]
+\begin{figure}[hb!]
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -76,7 +210,7 @@ In the following the unscaled multiplicity, mean \pt{} and variance \pt{} distri
     \caption{Multiplicity distributions in the corresponding azimuthal regions for events with leading \pt{} cut applied (left) as well as without (right). The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
     \label{ue:multNoScale}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[th!]
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering
@@ -90,7 +224,7 @@ In the following the unscaled multiplicity, mean \pt{} and variance \pt{} distri
     \caption{Mean \pt{} in the corresponding azimuthal regions for events with leading \pt{} cut applied (left) as well as without (right). The systematic uncertainties are shown as boxes, the statistical uncertainties as bars.}
     \label{ue:meanNoScale}
 \end{figure}
-\begin{figure}[h!]
+\begin{figure}[bh!]
     \centering
 	\begin{subfigure}{0.495\textwidth}
 		\centering

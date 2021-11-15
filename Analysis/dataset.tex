@@ -1,75 +1,29 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-This work aims to study the particle production in proton-proton as well as proton-Lead collisions. The first part of this thesis focuses on the comparison of proton-proton as well as proton-Lead data generated with different MCEG to measurement. \\
-The simulations are done with the \pythia{8.24}, \pythia{Angantyr} and \epos{} event generators using the Monash 2013 and LHC tune respectively. The proton-proton collisions are generated at center-of-mass energies 2.76 TeV, 5.02 TeV, 7 TeV and 13 TeV, the proton-Lead collisions at center-of-mass energies 5.02 TeV and 8.16 TeV. An overview of the generated statistics can be found in appendix \ref{app:data}. \\
-These are compared to proton-proton as well as proton-Lead data at the same center-of-mass energies, measured with the ALICE experiment. Since the statistic uncertainties are negligible, only the systematic uncertainties are shown.
+This work aims to study the particle production in ultra-relativistic particle collisions by studying pp as well as p--Pb collisions at different center-of-mass energies. \\
+The first part of this thesis focuses on testing the current hardonisation models by comparing the results of different MCEG to recent measurements of pp collisions at center-of-mass energies 2.76 TeV, 5.02 TeV, 7 TeV and 13 TeV as well as p--Pb collisions at center-of-mass energies 5.02 TeV and 8.16 TeV by ALICE. 
+The simulations are done at the respective center-of-mass energies with the \pythia{8.24}, \pythia{Angantyr} event generators using the Monash 2013 and the \epos{} event generator using the LHC tune.
+The number of generated events at each collision energy, and specifications for the used data can be found in appendix \ref{app:data}. \\
+The comparison is done on charged-particle multiplicity and transverse momentum distributions in the kinematic range of \mbox{$0.15\ \text{GeV}/c < p_\text{} \leq 10\ \text{GeV}/c$} and pseudorapidity $-0.8 \leq \eta < 0.8$, measured with the ALICE TPC. The standard track quality constraints, as explained in detail in \cite{track_cuts}, are used. Since the statistical uncertainties are negligible for these data, in the following only the systematical uncertainties are shown. \\
+In the second part of this theses the properties of charged-particles are analysed in different phase space regions defined by their azimuthal angle with respect to the highest transverse momentum particle in pp collisions at 5.02 TeV center-of-mass energy. The multiplicity and transverse momentum distributions are analysed in the kinematic range of \mbox{$0.15\ \text{GeV}/c < p_\text{} \leq 50\ \text{GeV}/c$} and pseudorapidity $-0.8 \leq \eta < 0.8$.
+The data were taken in 2017 by the ALICE experiment, the corresponding runlist can be found in appendix \ref{app:data}. 
+The same track quality constraints as above are used. 
 
-The comparison is done in a kinematic range of $0.15\ \text{GeV}/c \leq 10\ \text{GeV}/c$ and pseudorapidity $-0.8 \leq \eta < 0.8$, the standard track quality constraints as explained in detail in \cite{track_cuts} are used. \\
-The second part of this theses focuses on the analyses of charged-particle properties in different phase space regions defined by their azimuthal angle with respect to the highest transverse momentum particle. The analysed proton-proton data at center-of-mass energy 5.02 TeV were taken in 2017 by the ALICE experiment, the corresponding runlist can be found in appendix \ref{app:data}. The same track quality constraints as above are used, and all of the datasets were recorded using the MB trigger. \\
-For the charged-particle multiplicity, the transverse momentum, the mean \pt{}, variance \pt{} as well as summed \pt{} the systematic uncertainties are calculated using the standard track variations as used in \cite{track_cuts}. For each variation, the largest contribution is chosen. For the total systematic uncertainty the different contributions are added in quadrature. 
-An additional contribution to the total systematic uncertainty arises from the unfolding procedure applied to the data in order to correct for detector effects. It is explained in detail in \cite{mario_thesis}. In this work, the unfolding has been applied separately to the azimuthal regions. Since the Monte Carlo data does not fully represent the measured data, especially in the transverse and away regions, the unfolding procedure is not fully accurate. The Monte Carlo closure test for the azimuthal regions is described in the following section. The resulting uncertainties are added to the total systematic uncertainty. In order to differentiate between unfolded and measured raw multiplicity, the charged-particle multiplicity \mult{} is defined as the unfolded multiplicity and the measured raw multiplicity is denoted $N_{acc}$.
+All of the data were recorded using a MB trigger. In the following the event samples without any additional cuts or phase space restrictions will be denoted as MB.
+The detector effects on the multiplicity and the transverse momentum distributions are corrected for using a Bayesian unfolding technique explained in detail in \cite{mario_thesis}. 
+For the charged-particle multiplicity, the transverse momentum, the mean \pt{}, variance \pt{} as well as summed \pt{} distributions the systematic uncertainties are calculated using the standard track variations as used in \cite{track_cuts}. For other observables no systematic uncertainties are given.
+For each variation, the largest contribution is chosen. For the total systematic uncertainty the different contributions are added in quadrature. \\
+An additional contribution to the total systematic uncertainty arises from the unfolding procedure, since the description of the detector in the used simulation, is not fully accurate. It is calculated using Monte Carlo closure tests, as explained in the next section.
+The resulting uncertainties are added to the total systematic uncertainty in quadrature. In order to differentiate between unfolded and measured raw multiplicity, the charged-particle multiplicity \mult{} is defined as the unfolded multiplicity and the measured raw multiplicity is denoted $N_{acc}$.
 
-\section{Monte Carlo Closure Test} \label{dataset:unfolding}
+\section{Monte-Carlo Closure Test} \label{dataset:unfolding}
 
-As explained in chapter \ref{dec_sim}, the detector acceptance and efficiency influence the result of the measurement. In order to correct for these detector effects, detector simulations such as GEANT are used to estimate the effects of the detector on the measurement. The result of this detector simulation can be subjected to the same correction methods as used in the measured data. These corrected data can then be compared to the original simulation input given to the detector simulation in order to judge the quality of the simulation and the correction methods. Such a test is denoted as Monte Carlo closure test. The systematic uncertainties arising from the imperfect detector description is typically calculated by taking the ratio of the corrected to the generated data. In this work the correction method that is applied to the data is a bayesian unfolding approach. \\
-The Monte Carlo closure distributions for \mult in the three azimuthal regions as well as their combination \textit{all regions} are shown in figure \ref{dataset:mult_closure_mb} for the event samples without the leading particle \pt{} cut, and in figure \ref{dataset:mult_closure_cut} for the event sample with the leading \pt{} cut applied. The closed circles indicate the ratio was taken between the fully integrated distributions, the closed stars indicate that the ratio was taken between the distributions limited to one value \mult{}, and then averaged over \mult{} with the contributions being weighted with p(\mult{}). The corresponding weighted standard deviation is shown as a filled area. 
-The biggest contributions to the systematic uncertainties result from the small multiplicity values, where the unfolded distribution can not reproduce the generated distributions, as well as from the higher multiplicities where the statistical uncertainties dominate the unfolding procedure. In the range from \mult{} = 5 to \mult{} $\approx$ 30 the unfolding works, contributing to the systematic uncertainties with less than 5\%. 
+As explained in chapter \ref{dec_sim}, the detector acceptance and efficiency influence the result of the measurement. In order to correct for these detector effects, detector simulations such as GEANT are used to estimate the effects of the detector on the measurement. The result of this detector simulation can be subjected to the same correction methods as used in the measured data. These corrected data can then be compared to the original simulation input given to the detector simulation in order to judge the quality of the simulation and the correction methods. Such a test is denoted as Monte Carlo closure test. The systematic uncertainties arising from the imperfect detector description is typically calculated by taking the ratio of the corrected to the generated data. In this work the correction method that is applied to the data is a bayesian unfolding approach. 
 
-
-\begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_full.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_toward.pdf}
-	\end{subfigure}
-    \vspace*{\floatsep}
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_transverse.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_MB_away.pdf}
-	\end{subfigure}
-    \caption{The Monte Carlo closure distributions for \mult{} in the three azimuthal regions as well as their combination \textit{all regions} for events no leading particle \pt{} cut has been applied.}
-    \label{dataset:mult_closure_mb}
-% \end{figure*}
-        \vspace*{\floatsep}
-% \begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_full.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_toward.pdf}
-	\end{subfigure}
-    \vspace*{\floatsep}
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_transverse.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosureMult_Cut_away.pdf}
-	\end{subfigure}
-    \caption{The Monte Carlo closure distributions for \mult{} in the three azimuthal regions as well as their combination \textit{all regions} for events where the leading particle \pt{} cut has been applied.}
-    \label{dataset:mult_closure_cut}
-\end{figure*}
-
-
+The Monte Carlo closure test was performed in each of the three azimuthal regions as well as for their combination \textit{all regions} for event samples with and without the leading-particle \pt{} cut applied respectively. 
+For the multiplicity distributions, the unfolding procedure works quite well in the separate regions, the corresponding Monte Carlo closure distributions can be found in appendix \ref{app:mc_closure}.
+The biggest contributions to the systematic uncertainties result from the small multiplicity values, where the unfolded distribution can not reproduce the generated distributions, as well as from the higher multiplicities where the statistical uncertainties dominate the unfolding procedure. In the range from \mult{} = 5 to \mult{} $\approx$ 30 for the toward, away and transverse region, and \mult{} = 2 to \mult{} $\approx$ 65 for \textit{all regions} the unfolding procedure contributes to the systematic uncertainties with less than 5\%. Note that the difference between the unfolded and generated distributions are generally smaller for the distributions where the leading \pt{} cut has been applied. 
 \begin{figure*}[t!]
     \centering
 	\begin{subfigure}{0.495\textwidth}
@@ -94,32 +48,10 @@ The biggest contributions to the systematic uncertainties result from the small 
 	\end{subfigure}
     \caption{The Monte Carlo closure distributions for \pt{} in the three azimuthal regions as well as their combination \textit{all regions} for events where the no leading particle \pt{} cut has been applied.}
     \label{dataset:pt_closure_mb}
-% \end{figure*}
-        \vspace*{\floatsep}
-% \begin{figure*}[t!]
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_full.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_toward.pdf}
-	\end{subfigure}
-    \vspace*{\floatsep}
-    \centering
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_transverse.pdf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}{0.495\textwidth}
-		\centering
-		\includegraphics[width=0.95\textwidth]{Analysis/img/ue/closure_test/MCClosurePt_Cut_away.pdf}
-	\end{subfigure}
-    \caption{The Monte Carlo closure distributions for \mult{} in the three azimuthal regions as well as their combination \textit{all regions} for events where the leading particle \pt{} cut has been applied.}
-    \label{dataset:pt_closure_cut}
 \end{figure*}
+The transverse momentum can not be reproduced as well by the Monte Carlo simulation in the separate regions as the multiplicity. In the case where the leading-particle \pt{} cut has been applied, the contributions to the systematic uncertainties are smaller than 1\% below \mbox{$p_\text{T} = 4$ GeV/$c$}. The corresponding distributions can be found in appendix \ref{app:mc_closure}. In the towards region and correspondingly for \textit{all regions} combined, the systematic uncertainty is slightly enhanced above \mbox{$p_\text{T} = 4$ GeV/$c$}, due to the leading-particle \pt{} cut. In the case where no leading-particle \pt{} cut has been applied, the Monte Carlo simulation does not represent the correlation between multiplicity and transverse-momentum well. Figure \ref{dataset:pt_closure_mb} shows the corresponding distributions in the three regions as well as for \textit{all regions}. 
+The closed circles indicate the ratio was taken between the fully integrated distributions, the closed stars indicate that the ratio was taken between the distributions limited to one value \mult{}, and then averaged over \mult{} with the contributions being weighted with p(\mult{}). The corresponding weighted standard deviation is shown as a filled area. 
+While the contribution to the systematic uncertainties of the integrated transverse-momentum distributions is smaller than 1\%, the weighted mean shows clearly that the the \pt{} distributions are not represented well over the whole multiplicity range. This contributes mainly to the systematic uncertainties of the mean \pt{} and variance \pt{} distributions.
+
 
 \end{document}
